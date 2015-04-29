@@ -1,0 +1,31 @@
+//
+// Header
+//
+
+.site-header {
+  padding: 1rem 0;
+  margin-bottom: 2rem;
+  text-align: center;
+  position: relative;
+  height: 55px;
+  flex: none;
+  border-bottom: 1px solid #EFEFEF;
+}
+
+.logo {
+  position: absolute;
+  left: 50%;
+  transform: translate(-50%, 0);
+  text-decoration: none;
+}
+
+.nav-toggle {
+  display: block;
+  width: 2rem;
+  cursor: pointer;
+  position: relative;
+  top: .21rem;
+  box-shadow: 0px 0px 0px 1px #979797,
+              0px 9px 0px 1px #979797,
+              0px 18px 0px 1px #979797;
+}

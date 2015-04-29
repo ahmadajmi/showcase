@@ -1,0 +1,51 @@
+!!! 5
+%html{ng-app: "GS1"}
+  %head
+    %title {{ appName }}
+    %meta{name: "description", content: "GS1 Showcase Application"}
+    %meta{name: "keywords", content: "GS1"}
+
+    -# Twitter Card Meta
+    %meta{name: "twitter:card", content: "summary"}
+    %meta{name: "twitter:site", content: "{{ appName }}"}
+    %meta{name: "twitter:title", content: ""}
+    %meta{name: "twitter:description", content: ""}
+    %meta{name:"twitter:image", content: ""}
+    %meta{name: "twitter:url", content: ""}
+
+    -# Open Graph Meta
+    %meta{property: "og:title", content: ""}
+    %meta{property: "og:type", content: ""}
+    %meta{property: "og:url", content: ""}
+    %meta{property: "og:image", content: ""}
+    %meta{property: "og:description", content: ""}
+    %meta{property: "og:site_name", content: "GS1"}
+
+    -# Styles
+    %link{type: "text/css", rel: "stylesheet", href: "styles/main.min.css"}
+
+    -# Favicon
+    %link{href: "images/trustious.png", rel: "shortcut icon"}
+
+  %body
+
+    -# Header
+    %header{class: "site-header", role: "banner"}
+      .row
+        .column
+          %span{class: "nav-toggle"}
+
+          %a.logo{href: "/#/"}
+            {{ appName }}
+
+    -# Main Section
+    %main{class: "site-content margin-bottom-one", role: "main", ng-view:}
+
+    -# Footer
+    .footer.border-top{role: "contentinfo"}
+      .row
+        .large-12.column.text-center
+          %p.grey
+            Copyright &copy; 2015 GS1 Egypt LLC
+
+    %script{src: "js/app.js"}

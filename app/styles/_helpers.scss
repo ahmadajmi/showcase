@@ -1,0 +1,98 @@
+//
+// Helper Classes
+//
+
+// Align
+
+.text-left      { text-align: left; }
+.text-right     { text-align: right; }
+.text-center    { text-align: center; }
+.text-just      { text-align: justify; }
+
+
+// Display
+
+.inline       { display: inline; }
+.block        { display: block; }
+.inline-block { display: inline-block; }
+.hidden       { display: none; }
+
+
+// Lists
+
+.no-bullets     { list-style: none; }
+.list-bare {
+  margin: 0;
+  padding: 0;
+  @extend .no-bullets;
+}
+
+
+// Floats
+
+.left   { float: left; }
+.right  { float: right; }
+
+
+// Clearfix
+
+.clearfix {
+  &:before,
+  &:after {
+    content: " ";
+    display: table;
+  }
+
+  &:after { clear: both; }
+}
+
+
+// Colors & Background
+
+.grey { color: #97A2B0; }
+.grey-bg { background-color: #ecf0f1; }
+.white-bg { background-color: #fff; }
+.padding-half { padding: 1rem; }
+
+
+// Typo
+
+.uppercase { text-transform: uppercase; }
+
+.truncate {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+// Lists
+
+.no-bullets     { list-style: none; }
+.bullets-inside { list-style: inside; }
+.list-bare {
+  margin: 0;
+  padding: 0;
+  @extend .no-bullets;
+}
+
+
+// Box Model
+
+.hide { display: none; }
+.padding-one { padding: 1rem; }
+.margin-bottom-one { margin-bottom: 1rem; }
+.margin-bottom-two { margin-bottom: 2rem; }
+
+.padding-bottom-one { padding-bottom: 1rem; }
+
+// Circle
+
+.circle { border-radius: 50%; }
+
+.border-none          { border:         0; }
+.border-none:focus    { border:         0; }
+.border-all           { border:         1px solid $border-color; }
+.border-top           { border-top:     1px solid $border-color; }
+.border-bottom        { border-bottom:  1px solid $border-color; }
+.border-right         { border-right:   1px solid $border-color; }
+.border-left          { border-left:    1px solid $border-color; }

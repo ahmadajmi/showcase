@@ -1,0 +1,14 @@
+.row.hide{ng-controller: "Search"}
+  .large-12.column
+    .grey-bg.padding-one.margin-bottom-two.text-center.relative
+      .loading-spinner.hide{ng-show:"loading"}
+      %form{name: "SearchForm", ng-submit: "doSearch(searchQuery)", novalidate: "true"}
+
+        %input{type: "text", ng-model: "searchQuery", required: "true", placeholder: "ID", class: "input-field"}
+
+        %button{type: "submit", class: "button button-primary margin-bottom-none", ng-disabled: "SearchForm.$invalid"}
+          Search
+
+.banner-video
+  %video{src: "https://s3.amazonaws.com/www-assets.invisionapp.com/Homepage/enterprise-loop.mp4", autoplay: "true", poster: "https://unsplash.imgix.net/photo-1428342319217-5fdaf6d7898e?q=75&fm=jpg&w=1080&fit=max&s=500e3d9d1b1b21f5695148a13e3971b6", id: "video", loop: "true"}
+  .video_overlay

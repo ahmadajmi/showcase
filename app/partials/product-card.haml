@@ -1,0 +1,13 @@
+%a{ng-href: "#/product/{{product.id}}", class: "block"}
+  .flex-embed.flex-embed--4by3
+    %img.product-card-img.flex-embed__object{ng-src: "{{ product.image }}"}
+
+%a{ng-href: "#/product/{{product.id}}", class: "block text-center product-card-brand grey"}
+  {{ product.brand }}
+
+%h4.product-card-title
+  %a{ng-href: "#/product/{{product.id}}", class: "block text-center"}
+    {{ product.title }}
+
+%a{ng-href: "#/product/{{product.id}}", class: "block text-center product-card-number grey"}
+  {{ product.gtin }}

@@ -1,0 +1,16 @@
+%div{ng-controller: "Search"}
+
+  .row{ng-show:"loading"}
+    .large-12.column.text-center
+      .loading-spinner
+
+  .row{ng-show:"!loading"}
+    .large-12.column.text-center
+      {{ status }}
+
+  .row{ng-show:"!loading"}
+    .small-12.large-4.medium-6.column.margin-bottom-two{ng-repeat: "product in products | filter:query"}
+      .flex-embed.white-bg
+        %a{ng-href: "#/product/{{product.id}}", class: "flex-embed-item grey-bg padding-one text-center"}
+          {{ product.title }}
+

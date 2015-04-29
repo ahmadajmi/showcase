@@ -1,0 +1,63 @@
+// Product Grid
+
+//     |    |    |    |
+// ____|____|____|____|____
+//     |    |    |    |
+// ____|____|____|____|____
+//     |    |    |    |
+// ____|____|____|____|____
+//     |    |    |    |
+//     |    |    |    |
+
+.product-container {
+  overflow: hidden;
+  position: relative;
+
+  &:before,
+  &:after {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    z-index: 2;
+    content: " ";
+  }
+
+  // Override the Grid top border caused by .product-card class
+  &:before {
+    left: 1rem;
+    right: 1rem;
+    width: 100%;
+    border-top: 1px solid #fff;
+  }
+
+  // Override the Grid left border caused by .product-card class
+  &:after {
+    left: 0;
+    display: block;
+    border-left: 1rem solid #fff;
+  }
+}
+
+.product-card {
+  border: 1px solid $border-color;
+  border-bottom: 0;
+  border-right: 0;
+  padding-bottom: 1rem;
+}
+
+.product-card-img {
+  padding: 1rem 0;
+}
+
+.product-card-brand {
+
+}
+
+.product-card-title {
+  margin: 5px 0;
+  font-size: 20px;
+}
+
+.product-card-number {
+
+}

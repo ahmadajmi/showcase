@@ -1,0 +1,14 @@
+%div{ng-controller: "Products"}
+
+  .row{ng-show:"loading"}
+    .large-12.column.text-center
+      .loading-spinner
+
+  .row{ng-show:"!loading"}
+    .large-12.column.text-center
+      {{ status }}
+
+  .row{ng-show:"!loading"}
+    .product-container.clearfix
+      .small-12.large-4.medium-6.column.product-card{ng-repeat: "product in products"}
+        %product-card
