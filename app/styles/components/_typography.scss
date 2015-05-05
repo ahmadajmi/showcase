@@ -33,7 +33,7 @@ small,
 p { margin-bottom: 1.3rem; }
 
 a {
-  color: #333;
+  color: $link-color;
   text-decoration: none;
 
   &:hover {

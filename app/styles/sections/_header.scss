@@ -9,7 +9,7 @@
   position: relative;
   height: 55px;
   flex: none;
-  border-bottom: 1px solid #EFEFEF;
+  border-bottom: 2px solid $border-color;
 }
 
 .logo {
@@ -17,6 +17,7 @@
   left: 50%;
   transform: translate(-50%, 0);
   text-decoration: none;
+  color: #333;
 }
 
 .nav-toggle {

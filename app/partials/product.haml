@@ -8,18 +8,29 @@
     .large-12.column.text-center{ng-show:"!loading"}
       {{ status }}
 
-  .border-bottom.section{ng-show:"done"}
+  .border-bottom{ng-show:"done"}
     .row
-      .large-8.column.column--center.text-center
-        %img{ng-src: "{{ product.image }}"}
+      .large-12.column.margin-bottom-one
+        %breadcrumb
+
+    .row
+      .small-10.medium-8.large-8.column.column--center.text-center.section
+        .flex-embed.flex-embed--16by9
+          %img.flex-embed__object{ng-src: "{{ product.image }}", alt: "{{ product.title }}"}
 
   .border-bottom.section{ng-show:"done"}
     .row
       .large-8.column.column--center
         .text-center
           %h3 {{ product.title }}
+          %p
+            %a{ng-href: "#/product/{{product.id}}"}
+              Beverages
+             by
+            %a{ng-href: "#/product/{{product.id}}"}
+               Pepsi
         %p
-          {{ product.description }}
+          {{ productDetail.description }}
 
         .text-center
           %a{href: "#", class: "button button-primary bold"}
@@ -33,7 +44,7 @@
 
       .medium-10.large-8.column.column--center
         %ul.list-bare
-          %li.border-bottom.padding-bottom-one.margin-bottom-one{ng-repeat: "(specKey, specValue) in product.specs"}
+          %li.border-bottom.padding-bottom-one.margin-bottom-one{ng-repeat: "(specKey, specValue) in productDetail.specs"}
             .row
               .medium-4.large-4.column
                 %strong
@@ -49,5 +60,5 @@
 
     .row
       .product-container.clearfix
-        .small-12.large-4.medium-6.column.product-card{ng-repeat: "product in product.related"}
+        .small-12.large-4.medium-6.column.product-card{ng-repeat: "product in productDetail.related"}
           %product-card

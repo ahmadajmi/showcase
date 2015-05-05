@@ -12,7 +12,7 @@
   },
   "related": [
     {
-      "id": 12,
+      "id": 1,
       "image": "../images/pepsi1.jpg",
       "alt": "Image Alt",
       "brand": "Pepsi",
@@ -20,7 +20,7 @@
       "title": "Pepsi Light 350ml Can"
     },
     {
-      "id": 12,
+      "id": 2,
       "image": "../images/pepsi2.jpg",
       "alt": "Image Alt",
       "brand": "Pepsi",
@@ -28,7 +28,7 @@
       "title": "Pepsi Light 350ml Can"
     },
     {
-      "id": 12,
+      "id": 3,
       "image": "../images/pepsi3.jpg",
       "alt": "Image Alt",
       "brand": "Pepsi",
@@ -36,7 +36,7 @@
       "title": "Pepsi Light 350ml Can"
     },
     {
-      "id": 12,
+      "id": 4,
       "image": "../images/pepsi4.jpg",
       "alt": "Image Alt",
       "brand": "Pepsi",
@@ -44,7 +44,7 @@
       "title": "Pepsi Light 350ml Can"
     },
     {
-      "id": 12,
+      "id": 5,
       "image": "../images/pepsi5.jpg",
       "alt": "Image Alt",
       "brand": "Pepsi",
@@ -52,7 +52,7 @@
       "title": "Pepsi Light 350ml Can"
     },
     {
-      "id": 12,
+      "id": 6,
       "image": "../images/pepsi1.jpg",
       "alt": "Image Alt",
       "brand": "Pepsi",

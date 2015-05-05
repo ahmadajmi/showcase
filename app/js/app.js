@@ -63,8 +63,8 @@ angular.module('GS1', [
   };
 
 }])
-.controller('productDetails', ['$scope', 'productResource', '$routeParams',
-  function($scope, productResource, $routeParams) {
+.controller('productDetails', ['$scope', 'productsResource', 'productResource', '$routeParams',
+  function($scope, productsResource, productResource, $routeParams) {
 
     $scope.product;
     $scope.status;
@@ -72,10 +72,27 @@ angular.module('GS1', [
     $scope.done = false;
     $scope.productId = $routeParams.productId;
 
+    productsResource.query()
+    .$promise
+    .then(function(response) {
+      $scope.product = response;
+
+      $scope.product.forEach(function(index){
+        if ($scope.productId == index.id) {
+          $scope.product = index;
+        }
+      });
+
+      $scope.loading = false;
+    }, function() {
+      $scope.loading = false;
+      $scope.status = 'Unable to get product, ...';
+    });
+
     productResource.get()
       .$promise
       .then(function(response) {
-        $scope.product = response;
+        $scope.productDetail = response;
         $scope.loading = false;
         $scope.done = true;
       }, function() {
@@ -87,5 +104,10 @@ angular.module('GS1', [
 .directive('productCard', function() {
   return {
     templateUrl: 'partials/product-card.html'
+  };
+})
+.directive('breadcrumb', function() {
+  return {
+    templateUrl: 'partials/breadcrumb.html'
   };
 });
