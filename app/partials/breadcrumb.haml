@@ -2,6 +2,7 @@
   %li
     %a{href: "/#/"} Home
   %li
-    %a{href: "/#/"} Pepsi
+    %a{href: "/#/"}
+      {{ product.brandNameInformation.value }}
   %li.current
-    {{ product.title }}
+    {{ product.productName.value }}

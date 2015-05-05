@@ -1,5 +1,4 @@
 %div{ng-controller: "productDetails"}
-
   .row
     .large-12.column
       .loading-spinner{ng-show:"loading"}
@@ -16,21 +15,21 @@
     .row
       .small-10.medium-8.large-8.column.column--center.text-center.section
         .flex-embed.flex-embed--16by9
-          %img.flex-embed__object{ng-src: "{{ product.image }}", alt: "{{ product.title }}"}
+          %img.flex-embed__object{ng-src: "{{ product.photos.value[0] }}", alt: "{{ product.productName.value }}"}
 
   .border-bottom.section{ng-show:"done"}
     .row
       .large-8.column.column--center
         .text-center
-          %h3 {{ product.title }}
+          %h3 {{ product.productName.value }}
           %p
-            %a{ng-href: "#/product/{{product.id}}"}
+            %a{ng-href: "#/product/{{product.gtin.value}}"}
               Beverages
              by
-            %a{ng-href: "#/product/{{product.id}}"}
-               Pepsi
+            %a{ng-href: "#/product/{{product.gtin.value}}"}
+               {{ product.brandNameInformation.value }}
         %p
-          {{ productDetail.description }}
+          {{ productDetail.consumerMarketingDescription.value }}
 
         .text-center
           %a{href: "#", class: "button button-primary bold"}
@@ -44,13 +43,54 @@
 
       .medium-10.large-8.column.column--center
         %ul.list-bare
-          %li.border-bottom.padding-bottom-one.margin-bottom-one{ng-repeat: "(specKey, specValue) in productDetail.specs"}
+
+          %li.border-bottom.padding-bottom-one.margin-bottom-one
             .row
               .medium-4.large-4.column
                 %strong
-                  {{ specKey }}
+                  Manufactured by
               .medium-8.large-8.column
-                {{ specValue }}
+                {{ product.brandNameInformation.value }}
+
+          %li.border-bottom.padding-bottom-one.margin-bottom-one
+            .row
+              .medium-4.large-4.column
+                %strong
+                  Made In
+              .medium-8.large-8.column
+                {{ product.countryOfOrigin.value }}
+
+          %li.border-bottom.padding-bottom-one.margin-bottom-one
+            .row
+              .medium-4.large-4.column
+                %strong
+                  Material
+              .medium-8.large-8.column
+                {{  }}
+
+          %li.border-bottom.padding-bottom-one.margin-bottom-one
+            .row
+              .medium-4.large-4.column
+                %strong
+                  Style
+              .medium-8.large-8.column
+                {{  }}
+
+          %li.border-bottom.padding-bottom-one.margin-bottom-one
+            .row
+              .medium-4.large-4.column
+                %strong
+                  Dimensions
+              .medium-8.large-8.column
+                {{  }}
+
+          %li.border-bottom.padding-bottom-one.margin-bottom-one
+            .row
+              .medium-4.large-4.column
+                %strong
+                  Category
+              .medium-8.large-8.column
+                {{  }}
 
   .section{ng-show:"done"}
     .row

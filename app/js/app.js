@@ -14,7 +14,7 @@ angular.module('GS1', [
         controller: 'Products',
         templateUrl: 'partials/products-list.html'
       })
-      .when('/product/:productId', {
+      .when('/product/:productGTN', {
         controller: 'productDetails',
         templateUrl: 'partials/product.html'
       })
@@ -70,16 +70,16 @@ angular.module('GS1', [
     $scope.status;
     $scope.loading = true;
     $scope.done = false;
-    $scope.productId = $routeParams.productId;
+    $scope.productGTN = $routeParams.productGTN;
 
     productsResource.query()
     .$promise
     .then(function(response) {
       $scope.product = response;
 
-      $scope.product.forEach(function(index){
-        if ($scope.productId == index.id) {
-          $scope.product = index;
+      $scope.product.forEach(function(product) {
+        if ($scope.productGTN == product.gtin.value) {
+          $scope.product = product;
         }
       });
 

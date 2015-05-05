@@ -12,3 +12,12 @@
 .banner-video
   %video{src: "https://s3.amazonaws.com/www-assets.invisionapp.com/Homepage/enterprise-loop.mp4", autoplay: "true", poster: "https://unsplash.imgix.net/photo-1428342319217-5fdaf6d7898e?q=75&fm=jpg&w=1080&fit=max&s=500e3d9d1b1b21f5695148a13e3971b6", id: "video", loop: "true"}
   .video_overlay
+
+
+%li.border-bottom.padding-bottom-one.margin-bottom-one{ng-repeat: "(specKey, specValue) in productDetail.specs"}
+  .row
+    .medium-4.large-4.column
+      %strong
+        {{ specKey }}
+    .medium-8.large-8.column
+      {{ specValue }}
