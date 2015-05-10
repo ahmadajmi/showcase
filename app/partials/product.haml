@@ -1,4 +1,5 @@
 %div{ng-controller: "productDetails"}
+
   .row
     .large-12.column
       .loading-spinner{ng-show:"loading"}
@@ -8,7 +9,7 @@
       {{ status }}
 
   .border-bottom{ng-show:"done"}
-    .row
+    .row.hide
       .large-12.column.margin-bottom-one
         %breadcrumb
 
@@ -21,25 +22,32 @@
     .row
       .large-8.column.column--center
         .text-center
-          %h3 {{ product.productName.value }}
+          .div{ng-show: "lang == 'en'"}
+            %h3 {{ product.productName.value }}
+
+
+          .div{ng-show: "lang == 'ar'"}
+            %h3 {{ product.productName.ar_value }}
+
           %p
             %a{ng-href: "#/product/{{product.gtin.value}}"}
               Beverages
-             by
+             {{ 'by' | translate }}
             %a{ng-href: "#/product/{{product.gtin.value}}"}
                {{ product.brandNameInformation.value }}
-        %p
-          {{ productDetail.consumerMarketingDescription.value }}
+          %p
+            {{ productDetail.consumerMarketingDescription.value }}
 
         .text-center
           %a{href: "#", class: "button button-primary bold"}
-            View Supplier Page
+            {{ 'button_view_supplier_page' | translate }}
 
   .border-bottom.section{ng-show:"done"}
     .row
       .large-8.column.column--center
         .text-center
-          %h4.uppercase.margin-bottom-one.padding-bottom-one Specifications
+          %h4.uppercase.margin-bottom-one.padding-bottom-one
+            {{ 'specifications' | translate }}
 
       .medium-10.large-8.column.column--center
         %ul.list-bare
@@ -48,7 +56,7 @@
             .row
               .medium-4.large-4.column
                 %strong
-                  Manufactured by
+                  {{ 'manufactured_by' | translate }}
               .medium-8.large-8.column
                 {{ product.brandNameInformation.value }}
 
@@ -56,39 +64,39 @@
             .row
               .medium-4.large-4.column
                 %strong
-                  Made In
+                  {{ 'made_in' | translate }}
               .medium-8.large-8.column
                 {{ product.countryOfOrigin.value }}
 
-          %li.border-bottom.padding-bottom-one.margin-bottom-one
+          %li.border-bottom.padding-bottom-one.margin-bottom-one.hide
             .row
               .medium-4.large-4.column
                 %strong
-                  Material
+                  {{ 'material' | translate }}
               .medium-8.large-8.column
                 {{  }}
 
-          %li.border-bottom.padding-bottom-one.margin-bottom-one
+          %li.border-bottom.padding-bottom-one.margin-bottom-one.hide
             .row
               .medium-4.large-4.column
                 %strong
-                  Style
+                  {{ 'style' | translate }}
               .medium-8.large-8.column
                 {{  }}
 
-          %li.border-bottom.padding-bottom-one.margin-bottom-one
+          %li.border-bottom.padding-bottom-one.margin-bottom-one.hide
             .row
               .medium-4.large-4.column
                 %strong
-                  Dimensions
+                  {{ 'dimensions' | translate }}
               .medium-8.large-8.column
                 {{  }}
 
-          %li.border-bottom.padding-bottom-one.margin-bottom-one
+          %li.border-bottom.padding-bottom-one.margin-bottom-one.hide
             .row
               .medium-4.large-4.column
                 %strong
-                  Category
+                  {{ 'category' | translate }}
               .medium-8.large-8.column
                 {{  }}
 
@@ -96,7 +104,8 @@
     .row
       .large-8.column.column--center
         .text-center
-          %h4.uppercase.margin-bottom-one.padding-bottom-one Related Products
+          %h4.uppercase.margin-bottom-one.padding-bottom-one
+            {{ 'related_products' | translate }}
 
     .row
       .product-container.clearfix

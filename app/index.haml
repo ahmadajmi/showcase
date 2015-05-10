@@ -1,5 +1,5 @@
 !!! 5
-%html{ng-app: "GS1"}
+%html{ng-app: "GS1", lang: "{{ lang }}"}
   %head
     %title {{ appName }}
     %meta{name: "description", content: "GS1 Showcase Application"}
@@ -44,8 +44,13 @@
     -# Footer
     .footer.border-top{role: "contentinfo"}
       .row
-        .large-12.column.text-center
+        .large-8.column
           %p.grey
             Copyright &copy; 2015 GS1 Egypt LLC
+
+        .large-4.column.text-right.padding-top-one.lang-select{ng-controller: "translateController"}
+          %p
+            %button{ng-click: "changeLanguage('ar')", translate: "button_lang_ar"}
+            %button{ng-click: "changeLanguage('en')", translate: "button_lang_en"}
 
     %script{src: "js/app.js"}

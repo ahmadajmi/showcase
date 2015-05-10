@@ -4,8 +4,22 @@ body {
   flex-direction: column;
 }
 
+[lang="ar"] body {
+  direction: rtl;
+}
+
 .site-content { flex: 1 0 auto; }
 
 img { max-width: 100%; }
 
 .section { padding: 3em 0; }
+
+[lang="ar"] .column:not(.column--center) { float: right; }
+
+[lang="ar"] .breadcrumbs li {
+  float: right;
+}
+
+[lang="ar"] .lang-select {
+  text-align: left;
+}
