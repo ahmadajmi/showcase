@@ -47,7 +47,10 @@ gulp.task('js', function(){
     './app/bower_components/angular-resource/angular-resource.js',
     './app/bower_components/angular-route/angular-route.js',
     './app/bower_components/angular-translate/angular-translate.js',
-    './app/js/app.js'])
+    './app/js/app.js',
+    './app/js/services.js',
+    './app/js/controllers.js',
+    './app/js/directives.js'])
     .pipe(jshint())
     .pipe(concat('app.js'))
     .pipe(uglify())

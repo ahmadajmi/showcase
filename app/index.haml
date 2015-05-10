@@ -32,11 +32,14 @@
     -# Header
     %header{class: "site-header", role: "banner"}
       .row
-        .column
+        .column.large-2
           %span{class: "nav-toggle"}
 
-          %a.logo{href: "/#/"}
-            {{ appName }}
+        %a.logo{href: "/#/"}
+          {{ appName }}
+
+        .column.large-2.right.text-right{ng-class: "{'left text-left': lang == 'ar'}"}
+          %language-selector
 
     -# Main Section
     %main{class: "site-content margin-bottom-one", role: "main", ng-view:}
@@ -47,10 +50,5 @@
         .large-8.column
           %p.grey
             Copyright &copy; 2015 GS1 Egypt LLC
-
-        .large-4.column.text-right.padding-top-one.lang-select{ng-controller: "translateController"}
-          %p
-            %button{ng-click: "changeLanguage('ar')", translate: "button_lang_ar"}
-            %button{ng-click: "changeLanguage('en')", translate: "button_lang_en"}
 
     %script{src: "js/app.js"}

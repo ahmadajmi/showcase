@@ -14,7 +14,7 @@ img { max-width: 100%; }
 
 .section { padding: 3em 0; }
 
-[lang="ar"] .column:not(.column--center) { float: right; }
+[lang="ar"] .column:not(.column--center):not(.right) { float: right; }
 
 [lang="ar"] .breadcrumbs li {
   float: right;
