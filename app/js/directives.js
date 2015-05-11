@@ -8,13 +8,9 @@
   return {
     templateUrl: 'partials/breadcrumb.html'
   };
-<<<<<<< HEAD
-})
-=======
 })
 .directive('languageSelector', function() {
   return {
     templateUrl: 'partials/language-selector.html'
   };
 })
->>>>>>> e6d9ebc... Organize JS files

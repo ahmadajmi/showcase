@@ -54,11 +54,7 @@
       $scope.status = 'Unable to get product, ...';
     });
 
-<<<<<<< HEAD
-    productResource.get()
-=======
     productResource.get({productGTN: $routeParams.productGTN})
->>>>>>> e6d9ebc... Organize JS files
       .$promise
       .then(function(response) {
         $scope.productDetail = response;

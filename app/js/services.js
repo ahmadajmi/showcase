@@ -1,11 +1,6 @@
 .factory('productsResource', ['$resource', '$rootScope', function($resource, $rootScope) {
   var urlBase;
 
-<<<<<<< HEAD
-  console.log($rootScope.lang);
-
-=======
->>>>>>> e6d9ebc... Organize JS files
   if ($rootScope.lang === 'en') {
     urlBase = '../data/products.json';
   } else {
