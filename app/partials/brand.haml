@@ -1,0 +1,28 @@
+%div{ng-controller: "brandDetails"}
+
+  .row
+    .large-12.column
+      .loading-spinner{ng-show:"loading"}
+
+  .row
+    .large-12.column.text-center{ng-show:"!loading"}
+      {{ status }}
+
+  .div{ng-show:"done"}
+
+    .row
+      .small-4.medium-2.large-2.column.column--center.text-center.section
+        .padding-one.grey-bg
+        .padding-one.grey-bg
+        .padding-one.grey-bg
+
+        %h4
+          {{brandName }}
+
+      .small-10.medium-8.large-8.column.column--center.text-center.section.grey-bg.padding-one.margin-bottom-one
+      .small-10.medium-8.large-8.column.column--center.text-center.section.grey-bg.padding-one.margin-bottom-one
+
+    .row
+      .product-container.clearfix
+        .small-12.large-4.medium-6.column.product-card{ng-repeat: "product in brand.related"}
+          %product-card

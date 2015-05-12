@@ -88,3 +88,24 @@
     };
   }
 ])
+.controller('brandDetails', ['$scope', 'brandResource', '$routeParams',
+  function($scope, brandResource, $routeParams) {
+
+    $scope.brand;
+    $scope.status;
+    $scope.loading = true;
+    $scope.done = false;
+    $scope.brandName = $routeParams.brandName;
+
+    brandResource.get({brandName: $routeParams.brandName})
+      .$promise
+      .then(function(response) {
+        $scope.brand = response;
+        $scope.loading = false;
+        $scope.done = true;
+      }, function() {
+        $scope.loading = false;
+        $scope.status = 'Unable to get product info, ...';
+      });
+  }
+])

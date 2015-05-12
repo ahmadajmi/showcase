@@ -20,6 +20,10 @@ angular.module('GS1', [
         controller: 'productDetails',
         templateUrl: 'partials/product.html'
       })
+      .when('/brand/:brandName', {
+        controller: 'brandDetails',
+        templateUrl: 'partials/brand.html'
+      })
       .otherwise({
         redirectTo: '/'
       });
