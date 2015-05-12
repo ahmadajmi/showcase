@@ -1,13 +1,10 @@
 .factory('productsResource', ['$resource', '$rootScope', function($resource, $rootScope) {
-  var urlBase;
 
-  if ($rootScope.lang === 'en') {
-    urlBase = '../data/products.json';
-  } else {
-    urlBase = '../data/ar_products.json';
+  return {
+    enResource: $resource('../data/products.json'),
+    arResource: $resource('../data/ar_products.json')
   }
 
-  return $resource(urlBase);
 }])
 .factory('productResource', ['$resource', '$rootScope', function($resource, $rootScope) {
   var urlBase = '../data/product.json';

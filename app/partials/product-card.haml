@@ -6,11 +6,12 @@
   {{ product.brandNameInformation.value }}
 
 %h4.product-card-title.text-center
+  {{ product.productName.value }}
 
-  .div{ng-show: "lang == 'en'"}
+  .div.hide{ng-show: "lang == 'en'"}
     {{ product.productName.value }}
 
-  .div{ng-show: "lang == 'ar'"}
+  .div.hide{ng-show: "lang == 'ar'"}
     {{ product.productName.ar_value }}
 
 .grey.text-center

@@ -1,13 +1,11 @@
-.controller('Products', ['$scope', 'productsResource', function($scope, productsResource) {
-
-  $scope.foo = {};
+.controller('Products', ['$scope', '$rootScope', 'productsResource', function($scope, $rootScope, productsResource, arProductsResource) {
 
   $scope.loading = true;
 
   $scope.products;
   $scope.status;
 
-  productsResource.query()
+  productsResource.enResource.query()
     .$promise
     .then(function(response) {
       $scope.products = response;
@@ -17,15 +15,25 @@
       $scope.status = 'Unable to get products, ...';
     });
 
-  $scope.getDetails = function(id) {
-    productsResource.get({product: id})
-      .$promise
-      .then(function(response) {
-        console.log(response);
-      }, function() {
-        console.log('err');
-      });
-  };
+  $rootScope.$on('languageChange', function(event, data) {
+
+    $scope.loading = true;
+    $scope.products;
+    $scope.status;
+
+    var resource = data.langKey === 'en' ? productsResource.enResource : productsResource.arResource;
+
+    resource.query()
+    .$promise
+    .then(function(response) {
+      console.log(response);
+      $scope.products = response;
+      $scope.loading = false;
+    }, function() {
+      $scope.loading = false;
+      $scope.status = 'Unable to get products, ...';
+    });
+  });
 
 }])
 .controller('productDetails', ['$scope', 'productsResource', 'productResource', '$routeParams',
@@ -37,7 +45,7 @@
     $scope.done = false;
     $scope.productGTN = $routeParams.productGTN;
 
-    productsResource.query()
+    productsResource.enResource.query()
     .$promise
     .then(function(response) {
       $scope.product = response;
@@ -66,16 +74,17 @@
       });
   }
 ])
-.controller('translateController', ['$scope', '$rootScope', '$controller', 'productsResource', '$translate',
-  function($scope, $rootScope, $controller, productsResource, $translate) {
+.controller('translateController', ['$scope', '$rootScope', 'productsResource', '$translate',
+  function($scope, $rootScope, productsResource, $translate) {
     $scope.changeLanguage = function(langKey) {
-
-      $controller('Products', {$scope: $scope});
 
       $rootScope.lang = langKey;
 
+      $rootScope.$broadcast('languageChange', {
+        langKey: langKey
+      });
+
       $translate.use(langKey);
-      document.documentElement.setAttribute('lang', langKey);
     };
   }
 ])
