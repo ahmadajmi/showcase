@@ -23,3 +23,11 @@ img { max-width: 100%; }
 [lang="ar"] .lang-select {
   text-align: left;
 }
+
+.photo-thumb {
+  cursor: pointer;
+  border: 2px solid #fff;
+  &.active {
+    border: 2px solid #D5D5D5;
+  }
+}

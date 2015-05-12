@@ -46,32 +46,38 @@
     $scope.productGTN = $routeParams.productGTN;
 
     productsResource.enResource.query()
-    .$promise
-    .then(function(response) {
-      $scope.product = response;
+      .$promise
+      .then(function(response) {
+        $scope.product = response;
 
-      $scope.product.forEach(function(product) {
-        if ($scope.productGTN == product.gtin.value) {
-          $scope.product = product;
-        }
+        $scope.product.forEach(function(product) {
+          if ($scope.productGTN == product.gtin.value) {
+            $scope.product = product;
+          }
+        });
+
+        $scope.loading = false;
+      }, function() {
+        $scope.loading = false;
+        $scope.status = 'Unable to get product, ...';
       });
-
-      $scope.loading = false;
-    }, function() {
-      $scope.loading = false;
-      $scope.status = 'Unable to get product, ...';
-    });
 
     productResource.get({productGTN: $routeParams.productGTN})
       .$promise
       .then(function(response) {
         $scope.productDetail = response;
+        $scope.mainPhoto = response.photos.value[0];
         $scope.loading = false;
         $scope.done = true;
       }, function() {
         $scope.loading = false;
         $scope.status = 'Unable to get product info, ...';
       });
+
+    $scope.setMainPhoto = function(photo) {
+      $scope.mainPhoto = photo;
+    }
+
   }
 ])
 .controller('translateController', ['$scope', '$rootScope', 'productsResource', '$translate',
