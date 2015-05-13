@@ -24,8 +24,6 @@
 
   // Override the Grid top border caused by .product-card class
   &:before {
-    left: 1rem;
-    right: 1rem;
     width: 100%;
     border-top: 2px solid #fff;
   }

@@ -5,8 +5,9 @@
 %a{ng-href: "#/product/{{product.id}}", class: "block text-center product-card-brand grey"}
   {{ product.brandNameInformation.value }}
 
-%h4.product-card-title.text-center
-  {{ product.productName.value }}
+%a{ng-href: "#/product/{{product.gtin.value}}", class: "block grey"}
+  %h4.product-card-title.text-center.truncate
+    {{ product.productName.value }}
 
   .div.hide{ng-show: "lang == 'en'"}
     {{ product.productName.value }}

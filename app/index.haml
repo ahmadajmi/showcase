@@ -32,13 +32,13 @@
     -# Header
     %header{class: "site-header", role: "banner"}
       .row
-        .column.large-2
-          %span{class: "nav-toggle"}
+        .large-6.column.navigation-wrapper
+          %navigation
 
         %a.logo{href: "/#/"}
           {{ appName }}
 
-        .column.large-2.right.text-right{ng-class: "{'left text-left': lang == 'ar'}"}
+        .column.small-3.large-2.right{class: "text-{{opposite_float}} {{opposite_float}}"}
           %language-selector
 
     -# Main Section

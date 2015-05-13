@@ -14,3 +14,10 @@
     templateUrl: 'partials/language-selector.html'
   };
 })
+
+.directive('navigation', function() {
+  return {
+    replace: true,
+    templateUrl: 'partials/navigation.html'
+  };
+})

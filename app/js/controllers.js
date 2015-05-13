@@ -86,6 +86,9 @@
 
       $rootScope.lang = langKey;
 
+      $rootScope.default_float = langKey === 'ar' ? 'right' : 'left';
+      $rootScope.opposite_float = langKey === 'ar' ? 'left' : 'right';
+
       $rootScope.$broadcast('languageChange', {
         langKey: langKey
       });
@@ -115,3 +118,20 @@
       });
   }
 ])
+.controller('MenuCtrl', ['$scope', function($scope) {
+
+  $scope.menuOpened = false;
+
+  $scope.toggleMenu = function(event) {
+    $scope.menuOpened = !($scope.menuOpened);
+    event.stopPropagation();
+  };
+
+  window.onclick = function() {
+    if ($scope.menuOpened) {
+      $scope.menuOpened = false;
+      $scope.$apply();
+    }
+  }
+
+}])

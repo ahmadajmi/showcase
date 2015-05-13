@@ -8,6 +8,9 @@ angular.module('GS1', [
 .run(['$rootScope', function($rootScope){
   $rootScope.appName = 'GS1 SHOWCASE';
   $rootScope.lang = 'en';
+  $rootScope.default_float = 'left';
+  $rootScope.opposite_float = 'right';
+
 }])
 .config(['$routeProvider', '$locationProvider', '$translateProvider',
   function($routeProvider, $locationProvider, $translateProvider) {
