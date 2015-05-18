@@ -6,14 +6,15 @@ angular.module('GS1', [
   'pascalprecht.translate'
 ])
 .run(['$rootScope', function($rootScope){
-  $rootScope.appName = 'GS1 SHOWCASE';
   $rootScope.lang = 'en';
+  $rootScope.appName = 'GS1 SHOWCASE';
   $rootScope.default_float = 'left';
   $rootScope.opposite_float = 'right';
-
+  $rootScope.endpoint = 'http://0.0.0.0:3000/v1';
+  $rootScope.token = 'f76b2ca2bd9b50f51e894ffd18708bc9';
 }])
-.config(['$routeProvider', '$locationProvider', '$translateProvider',
-  function($routeProvider, $locationProvider, $translateProvider) {
+.config(['$routeProvider', '$translateProvider',
+  function($routeProvider, $translateProvider) {
     $routeProvider
       .when('/', {
         controller: 'Products',
@@ -31,14 +32,9 @@ angular.module('GS1', [
         redirectTo: '/'
       });
 
-    $locationProvider.html5Mode({
-      enabled: false,
-      requireBase: false
-    });
-
     $translateProvider.translations('en', {
       'home': 'Home',
-      'by': 'by',
+      'by': 'by ',
       'manufactured_by': 'Manufactured by',
       'made_in': 'Made In',
       'material': 'Material',
@@ -53,7 +49,7 @@ angular.module('GS1', [
     })
     .translations('ar', {
       'home': 'الرئيسية',
-      'by': 'بواسطة',
+      'by': 'بواسطة ',
       'manufactured_by': 'مصنعة من قبل',
       'made_in': 'صنع في',
       'material': 'مادة',
@@ -67,5 +63,4 @@ angular.module('GS1', [
       'button_lang_en': 'الإنجليزية'
     })
     .preferredLanguage('en');
-
 }])

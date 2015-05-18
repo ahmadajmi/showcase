@@ -1,5 +1,4 @@
 %div{ng-controller: "productDetails"}
-
   .row
     .large-12.column
       .loading-spinner{ng-show:"loading"}
@@ -8,7 +7,7 @@
     .large-12.column.text-center{ng-show:"!loading"}
       {{ status }}
 
-  .border-bottom{ng-show:"done"}
+  .border-bottom.padding-bottom-one{ng-show:"done"}
     .row.margin-bottom-one
       .large-12.column.margin-bottom-one
         %breadcrumb
@@ -28,21 +27,17 @@
     .row
       .large-8.column.column--center
         .text-center
-          .div{ng-show: "lang == 'en'"}
-            %h3 {{ product.productName.value }}
-
-
-          .div{ng-show: "lang == 'ar'"}
-            %h3 {{ product.productName.ar_value }}
+          %h3 {{ product.productName.value }}
 
           %p
             %a{ng-href: "#/product/{{product.gtin.value}}"}
               Beverages
              {{ 'by' | translate }}
-            %a{ng-href: "#/product/{{product.gtin.value}}"}
-               {{ product.brandNameInformation.value }}
+
+            %a{href: "#/brand/{{product.brand.value}}"}
+              {{ product.brand.value }}
           %p
-            {{ productDetail.consumerMarketingDescription.value }}
+            {{ product.description.value }}
 
         .text-center
           %a{href: "#", class: "button button-primary bold"}
@@ -64,7 +59,7 @@
                 %strong
                   {{ 'manufactured_by' | translate }}
               .medium-8.large-8.column
-                {{ product.brandNameInformation.value }}
+                {{ product.brand.value }}
 
           %li.border-bottom.padding-bottom-one.margin-bottom-one
             .row
@@ -106,14 +101,14 @@
               .medium-8.large-8.column
                 {{  }}
 
-  .section{ng-show:"done"}
-    .row
-      .large-8.column.column--center
-        .text-center
-          %h4.uppercase.margin-bottom-one.padding-bottom-one
-            {{ 'related_products' | translate }}
+  -# .section{ng-show:"done"}
+  -#   .row
+  -#     .large-8.column.column--center
+  -#       .text-center
+  -#         %h4.uppercase.margin-bottom-one.padding-bottom-one
+  -#           {{ 'related_products' | translate }}
 
-    .row
-      .product-container.clearfix
-        .small-12.large-4.medium-6.column.product-card{ng-repeat: "product in productDetail.related"}
-          %product-card
+  -#   .row
+  -#     .product-container.clearfix
+  -#       .small-12.large-4.medium-6.column.product-card{ng-repeat: "product in productDetail.related"}
+  -#         %product-card

@@ -1,20 +1,21 @@
-.directive('productCard', ['$rootScope', function($rootScope) {
-    return {
-      templateUrl: 'partials/product-card.html'
-    };
-  }
-])
+.directive('productCard', function() {
+  return {
+    replace: true,
+    templateUrl: 'partials/product-card.html'
+  };
+})
 .directive('breadcrumb', function() {
   return {
+    replace: true,
     templateUrl: 'partials/breadcrumb.html'
   };
 })
 .directive('languageSelector', function() {
   return {
+    replace: true,
     templateUrl: 'partials/language-selector.html'
   };
 })
-
 .directive('navigation', function() {
   return {
     replace: true,

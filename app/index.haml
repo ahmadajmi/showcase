@@ -32,13 +32,13 @@
     -# Header
     %header{class: "site-header", role: "banner"}
       .row
-        .large-6.column.navigation-wrapper
+        .large-6.column.navigation-wrapper{class: "text-{{default_float}} {{default_float}}"}
           %navigation
 
         %a.logo{href: "/#/"}
           {{ appName }}
 
-        .column.small-3.large-2.right{class: "text-{{opposite_float}} {{opposite_float}}"}
+        .column.small-3.large-2{class: "text-{{opposite_float}} {{opposite_float}}"}
           %language-selector
 
     -# Main Section

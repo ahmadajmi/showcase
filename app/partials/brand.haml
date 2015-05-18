@@ -17,12 +17,12 @@
         .padding-one.grey-bg
 
         %h4
-          {{brandName }}
+          {{ brandName }}
 
       .small-10.medium-8.large-8.column.column--center.text-center.section.grey-bg.padding-one.margin-bottom-one
       .small-10.medium-8.large-8.column.column--center.text-center.section.grey-bg.padding-one.margin-bottom-one
 
     .row
       .product-container.clearfix
-        .small-12.large-4.medium-6.column.product-card{ng-repeat: "product in brand.related"}
+        .small-12.large-4.medium-6.column.product-card{ng-repeat: "product in brand"}
           %product-card
