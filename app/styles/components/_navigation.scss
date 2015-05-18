@@ -1,9 +1,5 @@
 // Navigation
 
-.navigation-wrapper {
-
-}
-
 .nav-toggle {
   display: inline-block;
   width: 2rem;
@@ -26,9 +22,8 @@
 }
 
 .navigation {
-  position: relative;
   height: 2rem;
-  padding-left: 1em;
+  padding-left: 1rem;
 
   &:hover .navigation-body {
     opacity: 1;
@@ -48,9 +43,13 @@
   }
 }
 
+[lang="ar"] .navigation {
+  padding-left: 0;
+  padding-right: 1rem;
+}
+
 .navigation-body {
   top: 100%;
-  width: 100%;
   z-index: 10;
   padding: 24px 24px 10px;
   position: absolute;

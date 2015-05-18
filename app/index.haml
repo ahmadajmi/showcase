@@ -4,6 +4,7 @@
     %title {{ appName }}
     %meta{name: "description", content: "GS1 Showcase Application"}
     %meta{name: "keywords", content: "GS1"}
+    %meta{name: "viewport", content: "width=device-width, initial-scale: 1.0"}
 
     -# Twitter Card Meta
     %meta{name: "twitter:card", content: "summary"}
@@ -31,8 +32,8 @@
 
     -# Header
     %header{class: "site-header", role: "banner"}
-      .row
-        .large-6.column.navigation-wrapper{class: "text-{{default_float}} {{default_float}}"}
+      .row.relative
+        .navigation-wrapper{class: "text-{{default_float}} {{default_float}}"}
           %navigation
 
         %a.logo{href: "/#/"}
