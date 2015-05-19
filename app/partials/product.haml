@@ -19,9 +19,11 @@
 
       .small-12.medium-4.large-2.column
         %ul.list-bare
-          %li.margin-bottom-one{ng-repeat: "photo in product.photos.value"}
+          %li.margin-bottom-one{ng-repeat: "photo in product.photos"}
             .flex-embed.flex-embed--16by9.grey-bg
-              %img.photo-thumb.flex-embed__object{ng-src: "{{ photo }}", alt: "{{ photo }}", ng-click: "setMainPhoto(photo)", ng-class: "{'active': mainPhoto == photo}"}
+              %img.photo-thumb.flex-embed__object{ng-src: "{{ photo }}", alt: "{{ }}", ng-click: "setMainPhoto(photo)", ng-class: "{'active': mainPhoto == photo}"}
+
+
 
   .border-bottom.section{ng-show:"done"}
     .row
