@@ -1,8 +1,10 @@
+The App is entirely build with AngularJS as a Single Page App and fetching the data through a REST API. You will notice that we are using a basic Node.js with Express configuration, this is just for deploying the App easily with the server as I needed this to deploy it to Heroku.
+
 #### Installation
 
 Make sure you have Node.js installed then the following commands to
 
-Install Node packages
+Install Node.js packages
 
 ```
 npm install
@@ -16,7 +18,7 @@ bower install
 
 ##### Build
 
-This will build all the files to the build directory
+This will build all the files to the `/public` directory
 
 ```
 gulp build
@@ -29,4 +31,10 @@ This will start the development mode and initialize a localhost server to previe
 ```
 gulp serve
 ```
+
+
+
+
+
+
 

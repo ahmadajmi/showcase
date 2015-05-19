@@ -1,14 +1,12 @@
 {
-  "name": "trustious",
+  "name": "GS1ShowCase",
   "version": "1.0.0",
-  "description": "Trustious Profile Page",
+  "description": "GS1 ShowCase App",
   "main": "index.js",
   "private": true,
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "author": "Ahmad Ajmi",
-  "license": "MIT",
   "dependencies": {
     "express": "^4.12.3"
   },
