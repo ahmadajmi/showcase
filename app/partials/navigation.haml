@@ -2,83 +2,10 @@
 
   %a{class: "nav-toggle", ng-click: "toggleMenu($event)"}
 
-  .navigation-body{ng-show: "menuOpened", class: "text-{{default_float}}" }
+  .navigation-body{ng-controller: "Categories", ng-show: "menuOpened", class: "text-{{default_float}}" }
     .row
-
       .column.large-6.medium-6
         %ul.list-bare
-          %li
+          %li{ng-repeat: "category in categories"}
             %a{href: "/#/", class: "item"}
-              Food/Beverage/Tobacco
-          %li
-            %a{href: "/#/", class: "item"}
-              Alcoholic Beverages
-          %li
-            %a{href: "/#/", class: "item"}
-              Classification
-          %li
-            %a{href: "/#/", class: "item"}
-              Beverages
-          %li
-            %a{href: "/#/", class: "item"}
-              Classic Pepsi
-          %li
-            %a{href: "/#/", class: "item"}
-              Productivity
-          %li
-            %a{href: "/#/", class: "item"}
-              Beverages
-          %li
-            %a{href: "/#/", class: "item"}
-              Customer Expectation
-          %li
-            %a{href: "/#/", class: "item"}
-              Classification
-          %li
-            %a{href: "/#/", class: "item"}
-              Beverages
-          %li
-            %a{href: "/#/", class: "item"}
-              Non Alcoholic
-          %li
-            %a{href: "/#/", class: "item"}
-              Ready to Drink
-
-      .column.large-6.medium-6
-        %ul.list-bare
-          %li
-            %a{href: "/#/", class: "item"}
-              Food/Beverage/Tobacco
-          %li
-            %a{href: "/#/", class: "item"}
-              Alcoholic Beverages
-          %li
-            %a{href: "/#/", class: "item"}
-              Classification
-          %li
-            %a{href: "/#/", class: "item"}
-              Beverages
-          %li
-            %a{href: "/#/", class: "item"}
-              Classic Pepsi
-          %li
-            %a{href: "/#/", class: "item"}
-              Productivity
-          %li
-            %a{href: "/#/", class: "item"}
-              Beverages
-          %li
-            %a{href: "/#/", class: "item"}
-              Customer Expectation
-          %li
-            %a{href: "/#/", class: "item"}
-              Classification
-          %li
-            %a{href: "/#/", class: "item"}
-              Beverages
-          %li
-            %a{href: "/#/", class: "item"}
-              Non Alcoholic
-          %li
-            %a{href: "/#/", class: "item"}
-              Ready to Drink
+              {{ category }}

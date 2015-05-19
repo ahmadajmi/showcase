@@ -11,6 +11,7 @@
       .then(function(response) {
         $scope.products = response.products;
         $scope.loading = false;
+        $rootScope.$broadcast('productsLoaded');
       }, function() {
         $scope.loading = false;
         $scope.status = 'Unable to get products, ...';
@@ -34,7 +35,7 @@
       $scope.done = false;
       $scope.productGTN = $routeParams.productGTN;
 
-      productsResource.getProduct().get({productGTN: $routeParams.productGTN})
+      return  productsResource.getProduct().get({productGTN: $routeParams.productGTN})
       .$promise
       .then(function(response) {
         $scope.product = response.product;
@@ -67,7 +68,7 @@
     $scope.done = false;
     $scope.brandName = $routeParams.brandName;
 
-    brandResource.get({brandName: $routeParams.brandName})
+    return brandResource.get({brandName: $routeParams.brandName})
     .$promise
     .then(function(response) {
       $scope.brand = response;
@@ -77,6 +78,26 @@
       $scope.loading = false;
       $scope.status = 'Unable to get brand info, ...';
     });
+
+  }])
+.controller('Categories', ['$scope', '$rootScope', 'productsResource',
+  function($scope, $rootScope, productsResource) {
+
+    function getCategories() {
+      return productsResource.getCategories()
+      .query()
+      .$promise
+      .then(function(response) {
+        $scope.categories = response.categories.slice(0,15);
+      }, function() {
+        $scope.status = 'Unable to get Categories';
+      });
+    }
+
+    $rootScope.$on('productsLoaded', function(event) {
+      getCategories();
+    });
+
   }])
 .controller('translateController', ['$scope', '$rootScope', 'productsResource', '$translate',
   function($scope, $rootScope, productsResource, $translate) {

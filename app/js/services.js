@@ -32,6 +32,15 @@
     });
   };
 
+  resource.getCategories = function() {
+    return $resource($rootScope.endpoint + '/categories/', {}, {
+      query: {
+        method: 'GET',
+        headers: headers
+      }
+    });
+  };
+
   return resource;
 
 }])
