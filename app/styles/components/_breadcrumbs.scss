@@ -5,7 +5,7 @@
 }
 
 .breadcrumbs li {
-  float: left;
+  display: inline-block;
   font-size: 0.8125rem;
   line-height: 0.8125rem;
 
@@ -14,7 +14,7 @@
     display: inline-block;
   }
 
-  &:before {
+  &:after {
     color: #979797;
     content: "/";
     margin: 0 0.66667rem;
@@ -22,8 +22,8 @@
     top: 1px;
   }
 
-  &:first-child:before {
-    content: " ";
+  &:last-child:after {
+    content: "";
     margin: 0;
   }
 
