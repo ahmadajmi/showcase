@@ -41,9 +41,9 @@
         $scope.product = response.product;
         $scope.mainPhoto = 'images/pepsi5.jpg';
         $scope.product.photos = [
-          $scope.mainPhoto,
-          'images/pepsi2.jpg',
-          'images/pepsi3.jpg'
+        $scope.mainPhoto,
+        'images/pepsi2.jpg',
+        'images/pepsi3.jpg'
         ];
         // $scope.mainPhoto = response.product.photos.value[0];
         $scope.loading = false;
@@ -103,6 +103,10 @@
     $rootScope.$on('productsLoaded', function(event) {
       getCategories();
     });
+
+  }])
+.controller('Search', ['$scope', '$rootScope',
+  function($scope, $rootScope) {
 
   }])
 .controller('translateController', ['$scope', '$rootScope', 'productsResource', '$translate',

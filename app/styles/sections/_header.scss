@@ -3,11 +3,10 @@
 //
 
 .site-header {
-  padding: 1rem 0;
+  padding: .5rem 0;
   margin-bottom: 2rem;
   text-align: center;
   position: relative;
-  height: 55px;
   flex: none;
   border-bottom: 2px solid $border-color;
 }
@@ -15,7 +14,8 @@
 .logo {
   position: absolute;
   left: 50%;
-  transform: translate(-50%, 0);
+  top: 50%;
+  transform: translate(-50%, -50%);
   text-decoration: none;
   color: #333;
 }

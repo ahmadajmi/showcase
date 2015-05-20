@@ -83,7 +83,22 @@
 .margin-bottom-one { margin-bottom: 1rem; }
 .margin-bottom-two { margin-bottom: 2rem; }
 
+
+.padding-left-one { padding-left: 1rem; }
+.padding-right-one { padding-right: 1rem; }
 .padding-bottom-one { padding-bottom: 1rem; }
+
+
+// Visibility Classes
+
+@media only screen and (max-width: 64em) {
+  .show-for-large { display: none; }
+}
+
+@media only screen and (min-width: 64em) {
+  .show-for-large { display: block; }
+}
+
 
 // Circle
 

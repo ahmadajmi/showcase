@@ -33,14 +33,17 @@
     -# Header
     %header{class: "site-header", role: "banner"}
       .row.relative
-        .navigation-wrapper{class: "text-{{default_float}} {{default_float}}"}
+        .navigation-wrapper{class: "text-{{default_float}} {{default_float}} padding-{{default_float}}-one"}
           %navigation
 
         %a.logo{href: "/#/"}
           {{ appName }}
 
-        .column.small-4.large-2{class: "text-{{opposite_float}} {{opposite_float}}"}
+        .div{class: "text-{{opposite_float}} {{opposite_float}} padding-{{opposite_float}}-one"}
           %language-selector
+
+        .div{class: "text-{{opposite_float}} {{opposite_float}} padding-{{opposite_float}}-one show-for-large"}
+          %search-form
 
     -# Main Section
     %main{class: "site-content margin-bottom-one", role: "main", ng-view:}
