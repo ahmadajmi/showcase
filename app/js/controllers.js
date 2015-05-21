@@ -94,15 +94,18 @@
       .query()
       .$promise
       .then(function(response) {
-        $scope.categories = response.categories.slice(0,15);
+        $scope.categories = response.categories;
+
       }, function() {
         $scope.status = 'Unable to get Categories';
       });
     }
 
-    $rootScope.$on('productsLoaded', function(event) {
-      getCategories();
-    });
+    getCategories();
+
+    // $rootScope.$on('productsLoaded', function(event) {
+    //   getCategories();
+    // });
 
   }])
 .controller('Search', ['$scope', '$rootScope',

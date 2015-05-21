@@ -31,3 +31,15 @@ img { max-width: 100%; }
     border: 2px solid #D5D5D5;
   }
 }
+
+.spec-item {
+  padding-bottom: 1rem;
+  margin-bottom: 1rem;
+  border-bottom: 1px solid $border-color;
+
+  &.photos,
+  &.gtin,
+  &.description {
+    display: none;
+  }
+}

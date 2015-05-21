@@ -10,7 +10,7 @@ angular.module('GS1', [
   $rootScope.appName = 'GS1 SHOWCASE';
   $rootScope.default_float = 'left';
   $rootScope.opposite_float = 'right';
-  $rootScope.endpoint = 'http://0.0.0.0:3000/v1';
+  $rootScope.endpoint = 'http://gs1-api.cloudapp.net:8080/v1';
   $rootScope.token = 'f76b2ca2bd9b50f51e894ffd18708bc9';
 }])
 .config(['$routeProvider', '$translateProvider',
@@ -45,7 +45,8 @@ angular.module('GS1', [
       'related_products': 'Related Products',
       'button_view_supplier_page': 'View Supplier Page',
       'button_lang_ar': 'Arabic',
-      'button_lang_en': 'English'
+      'button_lang_en': 'English',
+      'search_button': 'Search'
     })
     .translations('ar', {
       'home': 'الرئيسية',
@@ -60,7 +61,9 @@ angular.module('GS1', [
       'related_products': 'المنتجات ذات الصلة',
       'button_view_supplier_page': 'عرض صفحة الموزع',
       'button_lang_ar': 'العربية',
-      'button_lang_en': 'الإنجليزية'
+      'button_lang_en': 'الإنجليزية',
+      'search_button': 'بحث'
     })
-    .preferredLanguage('en');
+    .preferredLanguage('en')
+    .useSanitizeValueStrategy(null);
 }])

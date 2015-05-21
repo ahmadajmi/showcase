@@ -26,8 +26,7 @@
     return $resource($rootScope.endpoint + '/products/' + ':productGTN', { productGTN: '@productGTN' }, {
       get: {
         method: 'GET',
-        headers: headers,
-        // cache : true
+        headers: headers
       }
     });
   };
@@ -36,7 +35,8 @@
     return $resource($rootScope.endpoint + '/categories/', {}, {
       query: {
         method: 'GET',
-        headers: headers
+        headers: headers,
+        cache : true
       }
     });
   };

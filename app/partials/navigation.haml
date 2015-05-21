@@ -6,6 +6,6 @@
     .row
       .column.large-6.medium-6
         %ul.list-bare
-          %li{ng-repeat: "category in categories"}
+          %li{ng-repeat: "(categoryKey, categoryValue) in categories"}
             %a{href: "/#/", class: "item"}
-              {{ category }}
+              {{ categoryKey }}

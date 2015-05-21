@@ -5,4 +5,4 @@
     %input{type: "text", ng-model: "searchQuery", required: "true", placeholder: "", class: "input-field"}
 
     %button{type: "submit", class: "button button-small button-primary", ng-disabled: "SearchForm.$invalid"}
-      Search
+      {{ 'search_button' | translate }}

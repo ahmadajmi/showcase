@@ -14,13 +14,13 @@
 
     .row
       .small-12.medium-9.large-10.column
-        .flex-embed.flex-embed--16by9.grey-bg.margin-bottom-one
+        .flex-embed.flex-embed--16by9.margin-bottom-one
           %img.flex-embed__object{ng-src: "{{ mainPhoto }}", alt: "{{ product.productName.value }}"}
 
       .small-12.medium-3.large-2.column
         %ul.list-bare.row
           %li.margin-bottom-one.column.small-4.medium-12.large-12{ng-repeat: "photo in product.photos"}
-            .flex-embed.flex-embed--16by9.grey-bg
+            .flex-embed.flex-embed--16by9
               %img.photo-thumb.flex-embed__object{ng-src: "{{ photo }}", alt: "{{ }}", ng-click: "setMainPhoto(photo)", ng-class: "{'active': mainPhoto == photo}"}
 
   .border-bottom.section{ng-show:"done"}
@@ -30,8 +30,9 @@
           %h3 {{ product.productName.value }}
 
           %p
-            %a{ng-href: "#/product/{{product.gtin.value}}"}
-              Beverages
+            %a{href: "#/category/{{product.category.value}}"}
+                {{ product.category.value }}
+
              {{ 'by' | translate }}
 
             %a{href: "#/brand/{{product.brand.value}}"}
@@ -52,54 +53,14 @@
 
       .medium-10.large-8.column.column--center
         %ul.list-bare
-
-          %li.border-bottom.padding-bottom-one.margin-bottom-one
+          %li.spec-item{ng-repeat: "(specKey, specValue) in product", ng-class: "specKey"}
             .row
               .medium-4.large-4.column
                 %strong
-                  {{ 'manufactured_by' | translate }}
+                  {{ specValue.name }}
               .medium-8.large-8.column
-                {{ product.brand.value }}
+                {{ specValue.value }}
 
-          %li.border-bottom.padding-bottom-one.margin-bottom-one
-            .row
-              .medium-4.large-4.column
-                %strong
-                  {{ 'made_in' | translate }}
-              .medium-8.large-8.column
-                {{ product.countryOfOrigin.value }}
-
-          %li.border-bottom.padding-bottom-one.margin-bottom-one.hide
-            .row
-              .medium-4.large-4.column
-                %strong
-                  {{ 'material' | translate }}
-              .medium-8.large-8.column
-                {{  }}
-
-          %li.border-bottom.padding-bottom-one.margin-bottom-one.hide
-            .row
-              .medium-4.large-4.column
-                %strong
-                  {{ 'style' | translate }}
-              .medium-8.large-8.column
-                {{  }}
-
-          %li.border-bottom.padding-bottom-one.margin-bottom-one.hide
-            .row
-              .medium-4.large-4.column
-                %strong
-                  {{ 'dimensions' | translate }}
-              .medium-8.large-8.column
-                {{  }}
-
-          %li.border-bottom.padding-bottom-one.margin-bottom-one.hide
-            .row
-              .medium-4.large-4.column
-                %strong
-                  {{ 'category' | translate }}
-              .medium-8.large-8.column
-                {{  }}
 
   -# .section{ng-show:"done"}
   -#   .row
