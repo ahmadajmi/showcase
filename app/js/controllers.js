@@ -73,7 +73,6 @@
       return  productsResource.getBrand().get({brandName: $routeParams.brandName})
       .$promise
       .then(function(response) {
-        console.log(response);
         $scope.brand = response.brand;
         $scope.loading = false;
         $scope.done = true;
@@ -95,25 +94,21 @@
   function($scope, $rootScope, productsResource, $routeParams) {
 
     function getJsonLd() {
-      console.log($routeParams.productGTN);
-
       return productsResource.getJsonLd().get({productGTN: $routeParams.productGTN})
       .$promise
       .then(function(response) {
         $scope.json = response;
         document.getElementById("jsonld").innerHTML = JSON.stringify(response);
       }, function() {
-        console.log('false')
-        $scope.loading = false;
-        $scope.status = 'Unable to get brand info, ...';
+        $scope.json = 'Unable to get jsonld info.';
       });
     }
 
     getJsonLd();
 
-    // $rootScope.$on('languageChange', function(event, data) {
-    //   getJsonLd();
-    // });
+    $rootScope.$on('languageChange', function(event, data) {
+      getJsonLd();
+    });
 
   }])
 .controller('Categories', ['$scope', '$rootScope', 'productsResource',

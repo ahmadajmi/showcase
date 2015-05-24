@@ -8,14 +8,15 @@
     .large-12.column.text-center{ng-show:"!loading"}
       {{ status }}
 
-  .div{ng-show:"done"}
+  .row{ng-show:"done"}
+    .large-8.column.column--center.text-center
+      .row
+        .small-4.medium-4.large-4.column.column--center.text-center
+          .flex-embed.flex-embed--16by9
+            %img.flex-embed__object{ng-src: "{{ brand.logo }}"}
 
-    .row
-      .small-4.medium-2.large-2.column.column--center.text-center
-        %img{ng-src: "{{ brand.logo }}"}
-
-        %h4{style: "margin: 0;"}
-          {{ brand.name }}
+      %h4
+        {{ brand.name }}
 
       %p.text-center
         {{ brand.description }}

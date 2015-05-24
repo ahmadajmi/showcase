@@ -2,8 +2,10 @@
   %li
     %a{href: "/#/"}
       {{ 'home' | translate }}
-  %li
-    %a{href: "#/brands/{{product.brand.value}}"}
-      {{ product.brand.value }}
+
+  %li{ng-repeat: "item in product.classification.value"}
+    %a{href: "#/item"}
+      {{ item }}
+
   %li.current
     {{ product.productname.value }}

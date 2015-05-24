@@ -16,14 +16,6 @@ img { max-width: 100%; }
 
 [lang="ar"] .column:not(.column--center):not(.right) { float: right; }
 
-[lang="ar"] .breadcrumbs li {
-  float: right;
-}
-
-[lang="ar"] .lang-select {
-  text-align: left;
-}
-
 .photo-thumb {
   cursor: pointer;
   border: 2px solid #fff;
@@ -39,7 +31,10 @@ img { max-width: 100%; }
 
   &.photos,
   &.gtin,
-  &.description {
+  &.description,
+  &.classification {
     display: none;
   }
 }
+
+.brand-logo { width: 160px; }

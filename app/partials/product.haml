@@ -21,7 +21,7 @@
         %ul.list-bare.row
           %li.margin-bottom-one.column.small-4.medium-12.large-12{ng-repeat: "photo in product.photos"}
             .flex-embed.flex-embed--16by9
-              %img.photo-thumb.flex-embed__object{ng-src: "{{ photo }}", alt: "{{ }}", ng-click: "setMainPhoto(photo)", ng-class: "{'active': mainPhoto == photo}"}
+              %img.photo-thumb.flex-embed__object{ng-src: "{{ photo }}", alt: "{{ product.productname.value }}", ng-click: "setMainPhoto(photo)", ng-class: "{'active': mainPhoto == photo}"}
 
   .border-bottom.section{ng-show:"done"}
     .row
@@ -35,7 +35,7 @@
 
              {{ 'by' | translate }}
 
-            %a{href: "#/brand/{{product.brand.value}}"}
+            %a{href: "#/brands/{{product.brand.value}}"}
               {{ product.brand.value }}
           %p
             {{ product.description.value }}
@@ -53,7 +53,7 @@
 
       .medium-10.large-8.column.column--center
         %ul.list-bare
-          %li.spec-item{ng-repeat: "(specKey, specValue) in product", ng-class: "specKey"}
+          %li.spec-item{ng-repeat: "(specKey, specValue) in product", ng-class: "specKey", ng-show: "specValue.value"}
             .row
               .medium-4.large-4.column
                 %strong
