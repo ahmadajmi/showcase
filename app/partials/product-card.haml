@@ -3,12 +3,12 @@
     .flex-embed.flex-embed--4by3
       %img.product-card-img.flex-embed__object{ng-src: "{{ product.photos.value[0] }}"}
 
-  %a{ng-href: "#/brand/{{product.brand.value}}", class: "block text-center product-card-brand grey"}
+  %a{ng-href: "#/brands/{{product.brand.value}}", class: "block text-center product-card-brand grey"}
     {{ product.brand.value }}
 
   %a{ng-href: "#/product/{{product.gtin}}", class: "block grey"}
     %h4.product-card-title.text-center.truncate
-      {{ product.productName.value }}
+      {{ product.productname.value }}
 
   .grey.text-center
     GTIN {{ product.gtin }}

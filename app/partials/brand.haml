@@ -11,18 +11,16 @@
   .div{ng-show:"done"}
 
     .row
-      .small-4.medium-2.large-2.column.column--center.text-center.section
-        .padding-one.grey-bg
-        .padding-one.grey-bg
-        .padding-one.grey-bg
+      .small-4.medium-2.large-2.column.column--center.text-center
+        %img{ng-src: "{{ brand.logo }}"}
 
-        %h4
-          {{ brandName }}
+        %h4{style: "margin: 0;"}
+          {{ brand.name }}
 
-      .small-10.medium-8.large-8.column.column--center.text-center.section.grey-bg.padding-one.margin-bottom-one
-      .small-10.medium-8.large-8.column.column--center.text-center.section.grey-bg.padding-one.margin-bottom-one
+      %p.text-center
+        {{ brand.description }}
 
-    .row
-      .product-container.clearfix
-        .small-12.large-4.medium-6.column.product-card{ng-repeat: "product in brand"}
-          %product-card
+    -# .row
+    -#   .product-container.clearfix
+    -#     .small-12.large-4.medium-6.column.product-card{ng-repeat: "product in brand"}
+    -#       %product-card

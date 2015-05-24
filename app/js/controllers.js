@@ -39,13 +39,8 @@
       .$promise
       .then(function(response) {
         $scope.product = response.product;
-        $scope.mainPhoto = 'images/pepsi5.jpg';
-        $scope.product.photos = [
-        $scope.mainPhoto,
-        'images/pepsi2.jpg',
-        'images/pepsi3.jpg'
-        ];
-        // $scope.mainPhoto = response.product.photos.value[0];
+        $scope.mainPhoto = response.product.photos.value[0];
+        $scope.product.photos = response.product.photos.value;
         $scope.loading = false;
         $scope.done = true;
       }, function() {
@@ -65,25 +60,60 @@
     }
 
   }])
-.controller('brandDetails', ['$scope', 'brandResource', '$routeParams',
-  function($scope, brandResource, $routeParams) {
+.controller('brandDetails', ['$scope', '$rootScope', 'productsResource', '$routeParams',
+  function($scope, $rootScope, productsResource, $routeParams) {
 
-    $scope.brand;
-    $scope.status;
-    $scope.loading = true;
-    $scope.done = false;
-    $scope.brandName = $routeParams.brandName;
+    function getBrand() {
+      $scope.product;
+      $scope.status;
+      $scope.loading = true;
+      $scope.done = false;
+      $scope.brandName = $routeParams.brandName;
 
-    return brandResource.get({brandName: $routeParams.brandName})
-    .$promise
-    .then(function(response) {
-      $scope.brand = response;
-      $scope.loading = false;
-      $scope.done = true;
-    }, function() {
-      $scope.loading = false;
-      $scope.status = 'Unable to get brand info, ...';
+      return  productsResource.getBrand().get({brandName: $routeParams.brandName})
+      .$promise
+      .then(function(response) {
+        console.log(response);
+        $scope.brand = response.brand;
+        $scope.loading = false;
+        $scope.done = true;
+      }, function() {
+        $scope.loading = false;
+        $scope.status = 'Unable to get brand info, ...';
+      });
+    }
+
+    getBrand();
+
+    $rootScope.$on('languageChange', function(event, data) {
+      getBrand();
     });
+
+  }])
+
+.controller('jsonLD', ['$scope', '$rootScope', 'productsResource', '$routeParams',
+  function($scope, $rootScope, productsResource, $routeParams) {
+
+    function getJsonLd() {
+      console.log($routeParams.productGTN);
+
+      return productsResource.getJsonLd().get({productGTN: $routeParams.productGTN})
+      .$promise
+      .then(function(response) {
+        $scope.json = response;
+        document.getElementById("jsonld").innerHTML = JSON.stringify(response);
+      }, function() {
+        console.log('false')
+        $scope.loading = false;
+        $scope.status = 'Unable to get brand info, ...';
+      });
+    }
+
+    getJsonLd();
+
+    // $rootScope.$on('languageChange', function(event, data) {
+    //   getJsonLd();
+    // });
 
   }])
 .controller('Categories', ['$scope', '$rootScope', 'productsResource',

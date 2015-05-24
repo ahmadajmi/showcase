@@ -27,7 +27,7 @@
     .row
       .large-8.column.column--center
         .text-center
-          %h3 {{ product.productName.value }}
+          %h3 {{ product.productname.value }}
 
           %p
             %a{href: "#/category/{{product.category.value}}"}
@@ -60,6 +60,8 @@
                   {{ specValue.name }}
               .medium-8.large-8.column
                 {{ specValue.value }}
+
+  %script{type: "application/ld+json", id: "jsonld", ng-controller: "jsonLD"}
 
 
   -# .section{ng-show:"done"}

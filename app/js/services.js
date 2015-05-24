@@ -5,6 +5,7 @@
   var headers = {
     'Content-Type': 'application/json',
     'Accept-Language': $rootScope.lang,
+    'Accept': 'application/json',
     'Authorization': 'Token token="' + $rootScope.token + '"'
   };
 
@@ -31,6 +32,15 @@
     });
   };
 
+  resource.getJsonLd = function() {
+    return $resource($rootScope.endpoint + '/json-ld/' + ':productGTN', { productGTN: '@productGTN' }, {
+      get: {
+        method: 'GET',
+        headers: headers
+      }
+    });
+  };
+
   resource.getCategories = function() {
     return $resource($rootScope.endpoint + '/categories/', {}, {
       query: {
@@ -41,10 +51,15 @@
     });
   };
 
+  resource.getBrand = function() {
+    return $resource($rootScope.endpoint + '/brands/' + ':brandName', { brandName: '@brandName' }, {
+      get: {
+        method: 'GET',
+        headers: headers
+      }
+    });
+  };
+
   return resource;
 
-}])
-.factory('brandResource', ['$resource', '$rootScope', function($resource, $rootScope) {
-  var urlBase = '../data/brand.json';
-  return $resource(urlBase, {cache : true});
 }])
