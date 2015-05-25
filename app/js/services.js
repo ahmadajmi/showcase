@@ -60,6 +60,15 @@
     });
   };
 
+  resource.getCategory = function() {
+    return $resource($rootScope.endpoint + '/products?category=' + ':brandName', { brandName: '@brandName' }, {
+      get: {
+        method: 'GET',
+        headers: headers
+      }
+    });
+  };
+
   resource.getBrandProducts = function() {
     return $resource($rootScope.endpoint + '/products?brand=' + ':brandName', { brandName: '@brandName' }, {
       get: {

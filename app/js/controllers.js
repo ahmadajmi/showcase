@@ -104,7 +104,35 @@
     });
 
   }])
+.controller('categoryDetails', ['$scope', '$rootScope', 'productsResource', '$routeParams',
+  function($scope, $rootScope, productsResource, $routeParams) {
 
+    function getCategory() {
+      $scope.product;
+      $scope.status;
+      $scope.loading = true;
+      $scope.done = false;
+      $scope.categoryName = $routeParams.categoryName;
+
+      return productsResource.getCategory().get({productGTN: $routeParams.categoryName})
+      .$promise
+      .then(function(response) {
+        $scope.products = response.products;
+        $scope.loading = false;
+        $scope.done = true;
+      }, function() {
+        $scope.loading = false;
+        $scope.status = 'Unable to get product info, ...';
+      });
+    }
+
+    getCategory();
+
+    $rootScope.$on('languageChange', function(event, data) {
+      getCategory();
+    });
+
+  }])
 .controller('jsonLD', ['$scope', '$rootScope', 'productsResource', '$routeParams',
   function($scope, $rootScope, productsResource, $routeParams) {
 

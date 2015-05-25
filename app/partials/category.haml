@@ -1,0 +1,18 @@
+%div{ng-controller: "categoryDetails"}
+
+  .row
+    .large-12.column
+      .loading-spinner{ng-show:"loading"}
+
+  .row
+    .large-12.column.text-center{ng-show:"!loading"}
+      {{ status }}
+
+  .row{ng-show:"done"}
+    .column.large-12
+      %h4.border-bottom.padding-bottom-one {{ categoryName }}
+
+  .row{ng-show:"done"}
+    .product-container.clearfix
+      .small-12.large-4.medium-6.column.product-card{ng-repeat: "product in products"}
+        %product-card
