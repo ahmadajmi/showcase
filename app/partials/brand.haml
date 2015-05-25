@@ -8,20 +8,21 @@
     .large-12.column.text-center{ng-show:"!loading"}
       {{ status }}
 
+  .border-bottom{ng-show:"done"}
+    .row
+      .large-8.column.column--center.text-center
+        .row
+          .small-4.medium-4.large-4.column.column--center.text-center
+            .flex-embed.flex-embed--16by9
+              %img.flex-embed__object{ng-src: "{{ brand.logo }}"}
+
+        %h4
+          {{ brand.name }}
+
+        %p.text-center
+          {{ brand.description }}
+
   .row{ng-show:"done"}
-    .large-8.column.column--center.text-center
-      .row
-        .small-4.medium-4.large-4.column.column--center.text-center
-          .flex-embed.flex-embed--16by9
-            %img.flex-embed__object{ng-src: "{{ brand.logo }}"}
-
-      %h4
-        {{ brand.name }}
-
-      %p.text-center
-        {{ brand.description }}
-
-    -# .row
-    -#   .product-container.clearfix
-    -#     .small-12.large-4.medium-6.column.product-card{ng-repeat: "product in brand"}
-    -#       %product-card
+    .product-container.clearfix
+      .small-12.large-4.medium-6.column.product-card{ng-repeat: "product in products"}
+        %product-card

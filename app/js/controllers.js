@@ -35,7 +35,7 @@
       $scope.done = false;
       $scope.productGTN = $routeParams.productGTN;
 
-      return  productsResource.getProduct().get({productGTN: $routeParams.productGTN})
+      return productsResource.getProduct().get({productGTN: $routeParams.productGTN})
       .$promise
       .then(function(response) {
         $scope.product = response.product;
@@ -63,14 +63,15 @@
 .controller('brandDetails', ['$scope', '$rootScope', 'productsResource', '$routeParams',
   function($scope, $rootScope, productsResource, $routeParams) {
 
+    $scope.brandName = $routeParams.brandName;
+
     function getBrand() {
-      $scope.product;
+      $scope.brand;
       $scope.status;
       $scope.loading = true;
       $scope.done = false;
-      $scope.brandName = $routeParams.brandName;
 
-      return  productsResource.getBrand().get({brandName: $routeParams.brandName})
+      return productsResource.getBrand().get({brandName: $routeParams.brandName})
       .$promise
       .then(function(response) {
         $scope.brand = response.brand;
@@ -82,10 +83,24 @@
       });
     }
 
+    function getBrandProducts() {
+      $scope.products;
+      $scope.productsStatus;
+      return productsResource.getBrandProducts().get({brandName: $routeParams.brandName})
+      .$promise
+      .then(function(response) {
+        $scope.products = response.products;
+      }, function() {
+        $scope.productsStatus = 'Unable to get brand products';
+      });
+    }
+
     getBrand();
+    getBrandProducts();
 
     $rootScope.$on('languageChange', function(event, data) {
       getBrand();
+      getBrandProducts();
     });
 
   }])
