@@ -1,7 +1,7 @@
 .directive('productCard', function() {
   return {
     replace: true,
-    templateUrl: 'partials/product-card.html'
+    templateUrl: '../partials/product-card.html'
   };
 })
 .directive('breadcrumb', function() {

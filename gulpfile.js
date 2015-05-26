@@ -47,11 +47,25 @@ gulp.task('js', function(){
     './app/bower_components/angular-resource/angular-resource.js',
     './app/bower_components/angular-route/angular-route.js',
     './app/bower_components/angular-translate/angular-translate.js',
+
     './app/js/app.js',
-    './app/js/filters.js',
-    './app/js/services.js',
-    './app/js/controllers.js',
-    './app/js/directives.js'])
+
+    // Shared Stuff
+    './app/js/shared/filters.js',
+    './app/js/shared/controllers.js',
+    './app/js/shared/directives.js',
+
+    // Categories
+    './app/js/category/categoryService.js',
+    './app/js/category/categoryController.js',
+
+    // Brands
+    './app/js/brand/brandService.js',
+    './app/js/brand/brandController.js',
+
+    // Products
+    './app/js/product/productService.js',
+    './app/js/product/productController.js'])
     .pipe(jshint())
     .pipe(concat('app.js'))
     .pipe(uglify())
