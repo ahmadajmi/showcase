@@ -24,7 +24,7 @@
     function getBrandProducts() {
       $scope.products;
       $scope.productsStatus;
-      return brandService.getBrandProducts().get({brandName: $routeParams.brandName})
+      return brandService.getBrandProducts().get({brand: $routeParams.brand})
       .$promise
       .then(function(response) {
         $scope.products = response.products;

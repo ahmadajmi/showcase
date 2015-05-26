@@ -14,7 +14,7 @@
   });
 
   resource.getBrand = function() {
-    return $resource($rootScope.endpoint + '/brands/' + ':brandName', { brandName: '@brandName' }, {
+    return $resource($rootScope.endpoint + '/brands/' + ':brand', { brand: '@brand' }, {
       get: {
         method: 'GET',
         headers: headers
@@ -23,7 +23,7 @@
   };
 
   resource.getBrandProducts = function() {
-    return $resource($rootScope.endpoint + '/products?brand=' + ':brandName', { brandName: '@brandName' }, {
+    return $resource($rootScope.endpoint + '/products?brand=' + ':brand', { brand: '@brand' }, {
       get: {
         method: 'GET',
         headers: headers
