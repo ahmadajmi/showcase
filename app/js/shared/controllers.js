@@ -1,8 +1,8 @@
-.controller('Search', ['$scope', '$rootScope',
+.controller('SearchController', ['$scope', '$rootScope',
   function($scope, $rootScope) {
 
   }])
-.controller('translateController', ['$scope', '$rootScope', '$translate',
+.controller('TranslateController', ['$scope', '$rootScope', '$translate',
   function($scope, $rootScope, $translate) {
 
     $scope.changeLanguage = function(langKey) {
@@ -19,7 +19,7 @@
     };
 
   }])
-.controller('MenuCtrl', ['$scope', function($scope) {
+.controller('MenuController', ['$scope', function($scope) {
 
   $scope.menuOpened = false;
 

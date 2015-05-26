@@ -1,4 +1,4 @@
-.controller('Categories', ['$scope', '$rootScope', 'categoryService',
+.controller('CategoriesController', ['$scope', '$rootScope', 'categoryService',
   function($scope, $rootScope, categoryService) {
 
     function getCategories() {
@@ -20,7 +20,7 @@
     // });
 
 }])
-.controller('categoryDetails', ['$scope', '$rootScope', 'categoryService', '$routeParams',
+.controller('CategoryController', ['$scope', '$rootScope', 'categoryService', '$routeParams',
   function($scope, $rootScope, categoryService, $routeParams) {
 
     function getCategory() {

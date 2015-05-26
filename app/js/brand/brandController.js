@@ -1,4 +1,4 @@
-.controller('brandDetails', ['$scope', '$rootScope', 'brandService', '$routeParams',
+.controller('BrandController', ['$scope', '$rootScope', 'brandService', '$routeParams',
   function($scope, $rootScope, brandService, $routeParams) {
 
     $scope.brandName = $routeParams.brandName;

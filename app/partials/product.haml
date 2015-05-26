@@ -1,4 +1,4 @@
-%div{ng-controller: "productDetails"}
+%div{ng-controller: "ProductController"}
   .row
     .large-12.column
       .loading-spinner{ng-show:"loading"}
@@ -61,7 +61,7 @@
               .medium-8.large-8.column
                 {{ specValue.value }}
 
-  %script{type: "application/ld+json", id: "jsonld", ng-controller: "jsonLD"}
+  %script{type: "application/ld+json", id: "jsonld", ng-controller: "JsonLDController"}
 
 
   .section{ng-show:"done"}

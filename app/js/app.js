@@ -25,11 +25,11 @@ angular.module('GS1', [
         templateUrl: 'partials/product.html'
       })
       .when('/brands/:brand', {
-        controller: 'brandDetails',
+        controller: 'BrandController',
         templateUrl: 'partials/brand.html'
       })
       .when('/category/:category', {
-        controller: 'categoryDetails',
+        controller: 'CategoryController',
         templateUrl: 'partials/category.html'
       })
       .otherwise({

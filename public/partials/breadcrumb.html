@@ -1,1 +1,1 @@
-<ul class="breadcrumbs"><li><a href="/#/">{{ 'home' | translate }}</a></li><li ng-repeat="category in product.classification.value"><a href="#/category/{{category}}">{{ category }}</a></li><li class="current">{{ product.productname.value }}</li></ul>
+<ul class="breadcrumbs"><li><a href="/#/">{{ 'home' | translate }}</a></li><li ng-repeat="category in product.classification.value"><a href="#/category/{{category | removeTrailingSlash}}">{{ category }}</a></li><li class="current">{{ product.productname.value }}</li></ul>

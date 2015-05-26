@@ -1,4 +1,4 @@
-.controller('Products', ['$scope', '$rootScope', 'productResource',
+.controller('ProductsController', ['$scope', '$rootScope', 'productResource',
   function($scope, $rootScope, productResource, arproductResource) {
 
     function getProducts() {
@@ -25,7 +25,7 @@
     });
 
   }])
-.controller('productDetails', ['$scope', '$rootScope', 'productResource', '$routeParams',
+.controller('ProductController', ['$scope', '$rootScope', 'productResource', '$routeParams',
   function($scope, $rootScope, productResource, $routeParams) {
 
     function getProduct() {
@@ -75,7 +75,7 @@
 
   }])
 
-.controller('jsonLD', ['$scope', '$rootScope', 'productResource', '$routeParams',
+.controller('JsonLDController', ['$scope', '$rootScope', 'productResource', '$routeParams',
   function($scope, $rootScope, productResource, $routeParams) {
 
     function getJsonLd() {
