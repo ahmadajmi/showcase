@@ -32,6 +32,15 @@
     });
   };
 
+  resource.getrelatedProducts = function() {
+    return $resource($rootScope.endpoint + '/products/' + ':productGTN' + 'related_products', { productGTN: '@productGTN' }, {
+      get: {
+        method: 'GET',
+        headers: headers
+      }
+    });
+  };
+
   resource.getJsonLd = function() {
     return $resource($rootScope.endpoint + '/json-ld/' + ':productGTN', { productGTN: '@productGTN' }, {
       get: {

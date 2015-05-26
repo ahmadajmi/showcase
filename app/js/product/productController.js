@@ -49,10 +49,24 @@
       });
     }
 
+    function getRelatedProducts() {
+      $scope.related_products;
+      $scope.productsStatus;
+      return productResource.getrelatedProducts().get({productGTN: $routeParams.productGTN})
+      .$promise
+      .then(function(response) {
+        $scope.related_products = response.products;
+      }, function() {
+        $scope.productsStatus = 'Unable to get brand products';
+      });
+    }
+
     getProduct();
+    getRelatedProducts()
 
     $rootScope.$on('languageChange', function(event, data) {
       getProduct();
+      getRelatedProducts();
     });
 
     $scope.setMainPhoto = function(photo) {

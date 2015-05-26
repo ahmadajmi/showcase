@@ -30,7 +30,7 @@
           %h3 {{ product.productname.value }}
 
           %p
-            %a{href: "#/category/{{product.category.value | removeTrailingSlash}}"}
+            %a{href: "#/category/{{product.category.value}}"}
                 {{ product.category.value }}
 
              {{ 'by' | translate }}
@@ -64,14 +64,14 @@
   %script{type: "application/ld+json", id: "jsonld", ng-controller: "jsonLD"}
 
 
-  -# .section{ng-show:"done"}
-  -#   .row
-  -#     .large-8.column.column--center
-  -#       .text-center
-  -#         %h4.uppercase.margin-bottom-one.padding-bottom-one
-  -#           {{ 'related_products' | translate }}
+  .section{ng-show:"done"}
+    .row
+      .large-8.column.column--center
+        .text-center
+          %h4.uppercase.margin-bottom-one.padding-bottom-one
+            {{ 'related_products' | translate }}
 
-  -#   .row
-  -#     .product-container.clearfix
-  -#       .small-12.large-4.medium-6.column.product-card{ng-repeat: "product in productDetail.related"}
-  -#         %product-card
+    .row
+      .product-container.clearfix
+        .small-12.large-4.medium-6.column.product-card{ng-repeat: "product in related_products"}
+          %product-card
