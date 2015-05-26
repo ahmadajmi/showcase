@@ -51,8 +51,8 @@
     });
   };
 
-  resource.getBrand = function() {
-    return $resource($rootScope.endpoint + '/brands/' + ':brandName', { brandName: '@brandName' }, {
+  resource.getCategory = function() {
+    return $resource($rootScope.endpoint + '/products?category=' + ':brandName', { categoryName: '@categoryName' }, {
       get: {
         method: 'GET',
         headers: headers
@@ -60,8 +60,8 @@
     });
   };
 
-  resource.getCategory = function() {
-    return $resource($rootScope.endpoint + '/products?category=' + ':brandName', { brandName: '@brandName' }, {
+  resource.getBrand = function() {
+    return $resource($rootScope.endpoint + '/brands/' + ':brandName', { brandName: '@brandName' }, {
       get: {
         method: 'GET',
         headers: headers

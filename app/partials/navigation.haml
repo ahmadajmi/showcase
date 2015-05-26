@@ -7,5 +7,5 @@
       .column.large-6.medium-6
         %ul.list-bare
           %li{ng-repeat: "(categoryKey, categoryValue) in categories"}
-            %a{href: "/#/", class: "item"}
+            %a{href: "#/category/{{categoryKey | removeTrailingSlash}}", class: "item"}
               {{ categoryKey }}

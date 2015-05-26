@@ -33,7 +33,8 @@ angular.module('GS1', [
         templateUrl: 'partials/category.html'
       })
       .otherwise({
-        redirectTo: '/'
+        template: 'oops ... do not understand that route',
+        // redirectTo: '/'
       });
 
     $translateProvider.translations('en', {
