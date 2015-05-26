@@ -28,9 +28,9 @@
       $scope.status;
       $scope.loading = true;
       $scope.done = false;
-      $scope.categoryName = $routeParams.categoryName.replace(/\-/g, '/');
+      $scope.category = $routeParams.category.replace(/\-/g, '/');
 
-      return categoryService.getCategory().get({categoryName: $routeParams.categoryName})
+      return categoryService.getCategory().get({category: $scope.category})
       .$promise
       .then(function(response) {
         $scope.products = response.products;

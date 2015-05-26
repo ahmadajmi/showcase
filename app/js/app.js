@@ -28,7 +28,7 @@ angular.module('GS1', [
         controller: 'brandDetails',
         templateUrl: 'partials/brand.html'
       })
-      .when('/category/:categoryName', {
+      .when('/category/:category', {
         controller: 'categoryDetails',
         templateUrl: 'partials/category.html'
       })

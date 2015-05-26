@@ -24,7 +24,7 @@
   };
 
   resource.getCategory = function() {
-    return $resource($rootScope.endpoint + '/products?category=' + ':brandName', { categoryName: '@categoryName' }, {
+    return $resource($rootScope.endpoint + '/products?category=' + ':category', { category: '@category' }, {
       get: {
         method: 'GET',
         headers: headers
