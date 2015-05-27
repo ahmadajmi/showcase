@@ -4,6 +4,18 @@
     templateUrl: '../partials/product-card.html'
   };
 })
+.directive('brandCard', function() {
+  return {
+    replace: true,
+    templateUrl: '../partials/brand-card.html'
+  };
+})
+.directive('categoryCard', function() {
+  return {
+    replace: true,
+    templateUrl: '../partials/category-card.html'
+  };
+})
 .directive('breadcrumb', function() {
   return {
     replace: true,

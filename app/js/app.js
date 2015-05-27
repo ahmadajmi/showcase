@@ -17,11 +17,11 @@ angular.module('GS1', [
   function($routeProvider, $translateProvider) {
     $routeProvider
       .when('/', {
-        controller: 'Products',
+        controller: 'ProductsController',
         templateUrl: 'partials/products-list.html'
       })
       .when('/product/:productGTN', {
-        controller: 'productDetails',
+        controller: 'ProductController',
         templateUrl: 'partials/product.html'
       })
       .when('/brands/:brand', {
@@ -31,6 +31,10 @@ angular.module('GS1', [
       .when('/category/:category', {
         controller: 'CategoryController',
         templateUrl: 'partials/category.html'
+      })
+      .when('/search/:query', {
+        controller: 'SearchController',
+        templateUrl: 'partials/search.html'
       })
       .otherwise({
         template: 'oops ... do not understand that route',

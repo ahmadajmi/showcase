@@ -1,7 +1,3 @@
-.controller('SearchController', ['$scope', '$rootScope',
-  function($scope, $rootScope) {
-
-  }])
 .controller('TranslateController', ['$scope', '$rootScope', '$translate',
   function($scope, $rootScope, $translate) {
 

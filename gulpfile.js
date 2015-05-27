@@ -63,6 +63,10 @@ gulp.task('js', function(){
     './app/js/brand/brandService.js',
     './app/js/brand/brandController.js',
 
+    // Search
+    './app/js/search/searchService.js',
+    './app/js/search/searchController.js',
+
     // Products
     './app/js/product/productService.js',
     './app/js/product/productController.js'])

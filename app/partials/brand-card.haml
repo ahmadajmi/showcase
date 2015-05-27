@@ -1,0 +1,7 @@
+.div
+  %a{ng-href: "#/brands/{{brand.name}}", class: "block"}
+    .flex-embed.flex-embed--4by3
+      %img.product-card-img.flex-embed__object{ng-src: "{{ brand.logo }}"}
+
+  %a{ng-href: "#/brands/{{brand.name}}", class: "block text-center grey"}
+    {{ brand.name }}

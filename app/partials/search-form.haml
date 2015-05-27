@@ -1,8 +1,8 @@
 .right{ng-controller: "SearchController"}
-  .loading-spinner.hide{ng-show:"loading"}
-  %form{name: "SearchForm", ng-submit: "doSearch(searchQuery)", novalidate: "true"}
 
-    %input{type: "text", ng-model: "searchQuery", required: "true", placeholder: "", class: "input-field"}
+  %form{name: "SearchForm", ng-submit: "doSearch(query)", novalidate: "true"}
+
+    %input{type: "text", ng-model: "query", required: "true", placeholder: "", class: "input-field"}
 
     %button{type: "submit", class: "button button-small button-primary", ng-disabled: "SearchForm.$invalid"}
       {{ 'search_button' | translate }}
