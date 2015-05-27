@@ -12,32 +12,38 @@
     .column.large-12
       %h4.border-bottom.padding-bottom-one Search results for: {{ query }}
 
-.div.border-bottom{ng-show:"done && products.length > 0"}
-  .row{ng-show:"done"}
+%div{ng-show:"done && search_results_length > 0"}
+  .border-bottom{ng-show:"done && products.length > 0"}
+    .row{ng-show:"done"}
+      .column.large-12
+        %h6.border-bottom.padding-bottom-one Products
+
+    .row{ng-show:"done"}
+      .product-container.clearfix
+        .small-12.large-4.medium-6.column.product-card{ng-repeat: "product in products"}
+          %product-card
+
+  .border-bottom{ng-show:"done && brands.length > 0"}
+    .row{ng-show:"done"}
+      .column.large-12
+        %h6.border-bottom.padding-bottom-one Brands
+
+    .row{ng-show:"done"}
+      .product-container.clearfix
+        .small-12.large-4.medium-6.column.product-card{ng-repeat: "brand in brands"}
+          %brand-card
+
+  .border-bottom{ng-show:"done && categories.length > 0"}
+    .row{ng-show:"done && categories.length > 0"}
+      .column.large-12
+        %h6.border-bottom.padding-bottom-one Categories
+
+    .row{ng-show:"done"}
+      .product-container.clearfix
+        .small-12.large-4.medium-6.column.product-card{ng-repeat: "category in categories"}
+          %category-card
+
+.div{ng-show:"done && search_results_length == 0"}
+  .row
     .column.large-12
-      %h6.border-bottom.padding-bottom-one Products
-
-  .row{ng-show:"done"}
-    .product-container.clearfix
-      .small-12.large-4.medium-6.column.product-card{ng-repeat: "product in products"}
-        %product-card
-
-.div.border-bottom{ng-show:"done && brands.length > 0"}
-  .row{ng-show:"done"}
-    .column.large-12
-      %h6.border-bottom.padding-bottom-one Brands
-
-  .row{ng-show:"done"}
-    .product-container.clearfix
-      .small-12.large-4.medium-6.column.product-card{ng-repeat: "brand in brands"}
-        %brand-card
-
-.div.border-bottom{ng-show:"done && categories.length > 0"}
-  .row{ng-show:"done && categories.length > 0"}
-    .column.large-12
-      %h6.border-bottom.padding-bottom-one Categories
-
-  .row{ng-show:"done"}
-    .product-container.clearfix
-      .small-12.large-4.medium-6.column.product-card{ng-repeat: "category in categories"}
-        %category-card
+      %h6 Sorry There is no search results {{ query }}

@@ -12,6 +12,15 @@ angular.module('GS1', [
   $rootScope.opposite_float = 'right';
   $rootScope.endpoint = 'http://gs1-api.cloudapp.net:8080/v1';
   $rootScope.token = 'f76b2ca2bd9b50f51e894ffd18708bc9';
+  $rootScope.headers = {
+    'Content-Type': 'application/json',
+    'Accept-Language': $rootScope.lang,
+    'Accept': 'application/json',
+    'Authorization': 'Token token="' + $rootScope.token + '"'
+  }
+  $rootScope.$on('languageChange', function(event, data) {
+    $rootScope.headers['Accept-Language'] = data.langKey;
+  });
 }])
 .config(['$routeProvider', '$translateProvider',
   function($routeProvider, $translateProvider) {

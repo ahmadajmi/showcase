@@ -2,22 +2,11 @@
 
   var resource = {};
 
-  var headers = {
-    'Content-Type': 'application/json',
-    'Accept-Language': $rootScope.lang,
-    'Accept': 'application/json',
-    'Authorization': 'Token token="' + $rootScope.token + '"'
-  };
-
-  $rootScope.$on('languageChange', function(event, data) {
-    headers['Accept-Language'] = data.langKey;
-  });
-
   resource.getProducts = function() {
     return $resource($rootScope.endpoint + '/products/', {}, {
       query: {
         method: 'GET',
-        headers: headers,
+        headers: $rootScope.headers,
         // cache : true
       }
     });
@@ -27,7 +16,7 @@
     return $resource($rootScope.endpoint + '/products/' + ':productGTN', { productGTN: '@productGTN' }, {
       get: {
         method: 'GET',
-        headers: headers
+        headers: $rootScope.headers
       }
     });
   };
@@ -36,7 +25,7 @@
     return $resource($rootScope.endpoint + '/products/' + ':productGTN' + 'related_products', { productGTN: '@productGTN' }, {
       get: {
         method: 'GET',
-        headers: headers
+        headers: $rootScope.headers
       }
     });
   };
@@ -45,7 +34,7 @@
     return $resource($rootScope.endpoint + '/json-ld/' + ':productGTN', { productGTN: '@productGTN' }, {
       get: {
         method: 'GET',
-        headers: headers
+        headers: $rootScope.headers
       }
     });
   };

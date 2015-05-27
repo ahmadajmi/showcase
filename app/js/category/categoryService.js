@@ -2,22 +2,11 @@
 
   var resource = {};
 
-  var headers = {
-    'Content-Type': 'application/json',
-    'Accept-Language': $rootScope.lang,
-    'Accept': 'application/json',
-    'Authorization': 'Token token="' + $rootScope.token + '"'
-  };
-
-  $rootScope.$on('languageChange', function(event, data) {
-    headers['Accept-Language'] = data.langKey;
-  });
-
   resource.getCategories = function() {
     return $resource($rootScope.endpoint + '/categories/', {}, {
       query: {
         method: 'GET',
-        headers: headers,
+        headers: $rootScope.headers,
         cache : true
       }
     });
@@ -27,7 +16,7 @@
     return $resource($rootScope.endpoint + '/products?category=' + ':category', { category: '@category' }, {
       get: {
         method: 'GET',
-        headers: headers
+        headers: $rootScope.headers
       }
     });
   };

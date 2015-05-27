@@ -11,14 +11,12 @@
       return searchService.search().get({query: $scope.query})
       .$promise
       .then(function(response) {
-
         $scope.products = response.products;
         $scope.brands = response.brands;
         $scope.categories = response.categories;
-
+        $scope.search_results_length = $scope.products.length + $scope.brands.length + $scope.categories.length;
         $scope.loading = false;
         $scope.done = true;
-
       }, function() {
         $scope.loading = false;
         $scope.status = 'Unable to do search';
@@ -31,5 +29,9 @@
       $location.path('/search/'+ query);
       search();
     }
+
+    $rootScope.$on('languageChange', function(event, data) {
+      search();
+    });
 
   }])

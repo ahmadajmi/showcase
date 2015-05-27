@@ -2,22 +2,11 @@
 
   var resource = {};
 
-  var headers = {
-    'Content-Type': 'application/json',
-    'Accept-Language': $rootScope.lang,
-    'Accept': 'application/json',
-    'Authorization': 'Token token="' + $rootScope.token + '"'
-  };
-
-  $rootScope.$on('languageChange', function(event, data) {
-    headers['Accept-Language'] = data.langKey;
-  });
-
   resource.getBrand = function() {
     return $resource($rootScope.endpoint + '/brands/' + ':brand', { brand: '@brand' }, {
       get: {
         method: 'GET',
-        headers: headers
+        headers: $rootScope.headers
       }
     });
   };
@@ -26,7 +15,7 @@
     return $resource($rootScope.endpoint + '/products?brand=' + ':brand', { brand: '@brand' }, {
       get: {
         method: 'GET',
-        headers: headers
+        headers: $rootScope.headers
       }
     });
   };
