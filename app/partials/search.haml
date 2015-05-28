@@ -10,13 +10,13 @@
 
   .row{ng-show:"done"}
     .column.large-12
-      %h4.border-bottom.padding-bottom-one Search results for: {{ query }}
+      %h4.border-bottom.padding-bottom-one {{ 'search_page_title' | translate }} {{ query }}
 
 %div{ng-show:"done && search_results_length > 0"}
   .border-bottom{ng-show:"done && products.length > 0"}
     .row{ng-show:"done"}
       .column.large-12
-        %h6.border-bottom.padding-bottom-one Products
+        %h6.border-bottom.padding-bottom-one {{ 'products' | translate }}
 
     .row{ng-show:"done"}
       .product-container.clearfix
@@ -26,7 +26,7 @@
   .border-bottom{ng-show:"done && brands.length > 0"}
     .row{ng-show:"done"}
       .column.large-12
-        %h6.border-bottom.padding-bottom-one Brands
+        %h6.border-bottom.padding-bottom-one {{ 'brands' | translate }}
 
     .row{ng-show:"done"}
       .product-container.clearfix
@@ -36,7 +36,7 @@
   .border-bottom{ng-show:"done && categories.length > 0"}
     .row{ng-show:"done && categories.length > 0"}
       .column.large-12
-        %h6.border-bottom.padding-bottom-one Categories
+        %h6.border-bottom.padding-bottom-one {{ 'categories' | translate }}
 
     .row{ng-show:"done"}
       .product-container.clearfix
@@ -46,4 +46,4 @@
 .div{ng-show:"done && search_results_length == 0"}
   .row
     .column.large-12
-      %h6 Sorry There is no search results {{ query }}
+      %h6 {{ 'search_page_results_nothing_found' | translate }} {{ query }}
