@@ -1,4 +1,4 @@
-.controller('TranslateController', ['$scope', '$rootScope', '$translate',
+.controller('LanguageController', ['$scope', '$rootScope', '$translate',
   function($scope, $rootScope, $translate) {
 
     $scope.changeLanguage = function(langKey) {

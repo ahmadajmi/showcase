@@ -14,7 +14,7 @@
 
     getCategories();
 
-    $rootScope.$on('productsLoaded', function(event) {
+    $rootScope.$on('productsLoaded', function() {
       getCategories();
     });
 
@@ -41,7 +41,7 @@
 
     getCategory();
 
-    $rootScope.$on('languageChange', function(event, data) {
+    $rootScope.$on('languageChange', function() {
       getCategory();
     });
 

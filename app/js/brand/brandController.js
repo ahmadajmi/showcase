@@ -32,7 +32,7 @@
     getBrand();
     getBrandProducts();
 
-    $rootScope.$on('languageChange', function(event, data) {
+    $rootScope.$on('languageChange', function() {
       getBrand();
       getBrandProducts();
     });

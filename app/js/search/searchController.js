@@ -30,7 +30,7 @@
       search();
     }
 
-    $rootScope.$on('languageChange', function(event, data) {
+    $rootScope.$on('languageChange', function() {
       search();
     });
 

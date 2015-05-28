@@ -2,7 +2,7 @@ The App is entirely build with AngularJS as a Single Page App and fetching the d
 
 #### Installation
 
-Make sure you have Node.js installed then the following commands to
+Make sure you have [Node.js] and [bower] installed then the following commands to
 
 Install Node.js packages
 
@@ -42,22 +42,76 @@ gulp serve
 
 Label translations are done using [angular-translate] module, a simple key value object is defined in `app/js/app.js` to define translation labels. Whenever you need to add a new label, just add a simple object key, value pairs for example
 
-```
+``` javascript
 'search_page_title': 'Search results for: '
 ```
 
 With the corresponding Arabic label
 
-```
+``` javascript
 'search_page_title': 'نتائج البحث عن: '
 ```
 
 And you can use it in your partial as
 
-```
+``` html
 {{ 'search_page_title' | translate }}
 ```
 
+#### Switching between Language
 
+You may ask, How the transition is done between a language to a another when I press the language button, That's a good question :)
 
+The solution is simple.
+
+First a `$rootScope` variable is defined to hold the main language
+
+`app/js/app.js`
+
+``` javascript
+$rootScope.lang = 'en';
+```
+
+Then in `LanguageController` we do some stuff including changing the root language as
+
+``` javascript
+$rootScope.lang = langKey;
+```
+
+And a `$broadcast` to the `$rootScope` as
+
+``` javascript
+$rootScope.$broadcast('languageChange', {
+  langKey: langKey
+});
+```
+
+We listen to this this broadcast in different places including
+
+* Change the `$rootScope.headers` value that will be sent as a request header.
+
+``` javascript
+
+// app/js/app.js
+
+$rootScope.$on('languageChange', function(event, data) {
+  $rootScope.headers['Accept-Language'] = data.langKey;
+});
+```
+
+* Listen to this broadcast at any controller, for example the `ProductsController` at
+
+``` javascript
+
+// app/js/products/ProductsController.js
+
+$rootScope.$on('languageChange', function() {
+  getProducts();
+});
+```
+
+This will execute the `getProducts()` function and then update the view
+
+[Node.js]: https://nodejs.org/
+[bower]: http://bower.io/
 [angular-translate]: https://angular-translate.github.io/

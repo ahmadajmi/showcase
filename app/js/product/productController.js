@@ -18,7 +18,7 @@
 
     getProducts();
 
-    $rootScope.$on('languageChange', function(event, data) {
+    $rootScope.$on('languageChange', function() {
       getProducts();
     });
 
@@ -61,7 +61,7 @@
     getProduct();
     getRelatedProducts()
 
-    $rootScope.$on('languageChange', function(event, data) {
+    $rootScope.$on('languageChange', function() {
       getProduct();
       getRelatedProducts();
     });
@@ -88,7 +88,7 @@
 
     getJsonLd();
 
-    $rootScope.$on('languageChange', function(event, data) {
+    $rootScope.$on('languageChange', function() {
       getJsonLd();
     });
 
