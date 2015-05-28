@@ -2,8 +2,6 @@
   function($scope, $rootScope, productResource, arproductResource) {
 
     function getProducts() {
-      $scope.products;
-      $scope.status;
       $scope.loading = true;
 
       return productResource.getProducts().query()
@@ -29,8 +27,6 @@
   function($scope, $rootScope, productResource, $routeParams) {
 
     function getProduct() {
-      $scope.product;
-      $scope.status;
       $scope.loading = true;
       $scope.done = false;
       $scope.productGTN = $routeParams.productGTN;
@@ -39,6 +35,7 @@
       .$promise
       .then(function(response) {
         $scope.product = response.product;
+        $scope.productGTIN = response.product.gtin;
         $scope.mainPhoto = response.product.photos.value[0];
         $scope.product.photos = response.product.photos.value;
         $scope.loading = false;

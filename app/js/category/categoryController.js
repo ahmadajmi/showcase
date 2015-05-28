@@ -24,8 +24,6 @@
   function($scope, $rootScope, categoryService, $routeParams) {
 
     function getCategory() {
-      $scope.product;
-      $scope.status;
       $scope.loading = true;
       $scope.done = false;
       $scope.category = $routeParams.category.replace(/\-/g, '/');

@@ -2,15 +2,12 @@
   function($scope, $rootScope, brandService, $routeParams) {
 
     function getBrand() {
-      $scope.brand;
-      $scope.status;
       $scope.loading = true;
       $scope.done = false;
 
       return brandService.getBrand().get({brand: $routeParams.brand})
       .$promise
       .then(function(response) {
-        console.log(response);
         $scope.brand = response.brand;
         $scope.loading = false;
         $scope.done = true;

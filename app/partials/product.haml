@@ -61,9 +61,6 @@
               .medium-8.large-8.column
                 {{ specValue.value }}
 
-  %script{type: "application/ld+json", id: "jsonld", ng-controller: "JsonLDController"}
-
-
   .section{ng-show:"done"}
     .row
       .large-8.column.column--center
@@ -71,7 +68,10 @@
           %h4.uppercase.margin-bottom-one.padding-bottom-one
             {{ 'related_products' | translate }}
 
+    -# `product.gtin != productGTIN` is to exclude the current product to be shown as a related product
     .row
       .product-container.clearfix
-        .small-12.large-4.medium-6.column.product-card{ng-repeat: "product in related_products"}
+        .small-12.large-4.medium-6.column.product-card{ng-repeat: "product in related_products", ng-show: "product.gtin != productGTIN"}
           %product-card
+
+  %script{type: "application/ld+json", id: "jsonld", ng-controller: "JsonLDController"}
