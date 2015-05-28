@@ -1,11 +1,6 @@
 %div{ng-controller: "ProductController"}
-  .row
-    .large-12.column
-      .loading-spinner{ng-show:"loading"}
 
-  .row
-    .large-12.column.text-center{ng-show:"!loading"}
-      {{ status }}
+  %loading-status{loading: "loading", status: "status"}
 
   .border-bottom.padding-bottom-one{ng-show:"done"}
     .row.margin-bottom-one

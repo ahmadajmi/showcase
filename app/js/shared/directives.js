@@ -4,6 +4,17 @@
     templateUrl: '../partials/product-card.html'
   };
 })
+.directive('loadingStatus', function() {
+  return {
+    restrict: 'E',
+    replace: true,
+    scope: {
+      loading: '=',
+      status: '='
+    },
+    templateUrl: '../partials/loading-status.html'
+  };
+})
 .directive('brandCard', function() {
   return {
     replace: true,

@@ -7,7 +7,6 @@
       .$promise
       .then(function(response) {
         $scope.categories = response.categories;
-
       }, function() {
         $scope.status = 'Unable to get Categories';
       });
@@ -15,9 +14,9 @@
 
     getCategories();
 
-    // $rootScope.$on('productsLoaded', function(event) {
-    //   getCategories();
-    // });
+    $rootScope.$on('productsLoaded', function(event) {
+      getCategories();
+    });
 
 }])
 .controller('CategoryController', ['$scope', '$rootScope', 'categoryService', '$routeParams',
