@@ -19,7 +19,7 @@
         $scope.done = true;
       }, function() {
         $scope.loading = false;
-        $scope.status = 'Unable to do search';
+        $scope.status = 'searchـloading_error_status';
       });
     }
 

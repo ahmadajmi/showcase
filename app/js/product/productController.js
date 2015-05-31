@@ -1,5 +1,5 @@
-.controller('ProductsController', ['$scope', '$rootScope', 'productResource',
-  function($scope, $rootScope, productResource, arproductResource) {
+.controller('ProductsController', ['$scope', '$rootScope', '$translate', 'productResource',
+  function($scope, $rootScope, $translate, productResource) {
 
     function getProducts() {
       $scope.loading = true;
@@ -12,7 +12,7 @@
         $rootScope.$broadcast('productsLoaded');
       }, function() {
         $scope.loading = false;
-        $scope.status = 'Unable to get products, ...';
+        $scope.status = 'productsـloading_error_status';
       });
     }
 
@@ -42,7 +42,7 @@
         $scope.done = true;
       }, function() {
         $scope.loading = false;
-        $scope.status = 'Unable to get product info, ...';
+        $scope.status = 'productـloading_error_status';
       });
     }
 

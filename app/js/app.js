@@ -67,7 +67,14 @@ angular.module('GS1', [
       'page_not_found_title': 'Sorry that page was not found',
       'products': 'Products',
       'brands': 'Brands',
-      'categories': 'Categories'
+      'categories': 'Categories',
+      'searchـloading_error_status': 'Unable to do search',
+      'productـloading_error_status': 'Unable to load product',
+      'productsـloading_error_status': 'Unable to load products',
+      'categoryـloading_error_status': 'Unable to get category info',
+      'categoriesـloading_error_status': 'Unable to get Categories',
+      'brandـloading_error_status': 'Unable to get brand info',
+      'brandـproducts_loading_error_status': 'Unable to get brand products'
     })
     .translations('ar', {
       'home': 'الرئيسية',
@@ -83,7 +90,14 @@ angular.module('GS1', [
       'page_not_found_title': 'عذرا لم يتم العثور على تلك الصفحة',
       'products': 'المنتجات',
       'brands': 'العلامات التجارية',
-      'categories': 'الفئات'
+      'categories': 'الفئات',
+      'searchـloading_error_status': 'غير قادر على القيام بالبحث',
+      'productـloading_error_status': 'غير قادر على تحميل المنتج',
+      'productsـloading_error_status': 'غير قادر على تحميل المنتجات',
+      'categoryـloading_error_status': 'غير قادر على الحصول على معلومات الفئة',
+      'categoriesـloading_error_status': 'غير قادر على تحميل الفئات',
+      'brandـloading_error_status': 'غير قادر للحصول على معلومات العلامة التجارية',
+      'brandـproducts_loading_error_status': 'غير قادر للحصول على معلومات المنتجات الخاصة بالعلامة التجارية'
     })
     .preferredLanguage('en')
     .useSanitizeValueStrategy(null);

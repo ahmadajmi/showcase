@@ -13,7 +13,7 @@
         $scope.done = true;
       }, function() {
         $scope.loading = false;
-        $scope.status = 'Unable to get brand info, ...';
+        $scope.status = 'brandـloading_error_status';
       });
     }
 
@@ -25,7 +25,7 @@
       .then(function(response) {
         $scope.products = response.products;
       }, function() {
-        $scope.productsStatus = 'Unable to get brand products';
+        $scope.productsStatus = 'brandـproducts_loading_error_status';
       });
     }
 

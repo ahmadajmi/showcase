@@ -8,7 +8,7 @@
       .then(function(response) {
         $scope.categories = response.categories;
       }, function() {
-        $scope.status = 'Unable to get Categories';
+        $scope.status = 'categoriesـloading_error_status';
       });
     }
 
@@ -35,7 +35,7 @@
         $scope.done = true;
       }, function() {
         $scope.loading = false;
-        $scope.status = 'Unable to get product info, ...';
+        $scope.status = 'categoryـloading_error_status';
       });
     }
 
