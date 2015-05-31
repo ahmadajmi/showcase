@@ -58,18 +58,22 @@ gulp.task('js', function(){
     // Categories
     './app/js/category/categoryService.js',
     './app/js/category/categoryController.js',
+    './app/js/category/categoryDirectives.js',
 
     // Brands
     './app/js/brand/brandService.js',
     './app/js/brand/brandController.js',
+    './app/js/brand/brandDirectives.js',
 
     // Search
     './app/js/search/searchService.js',
     './app/js/search/searchController.js',
+    './app/js/search/searchDirectives.js',
 
     // Products
     './app/js/product/productService.js',
-    './app/js/product/productController.js'])
+    './app/js/product/productController.js',
+    './app/js/product/productDirectives.js'])
     .pipe(jshint())
     .pipe(concat('app.js'))
     .pipe(uglify())

@@ -1,9 +1,3 @@
-.directive('productCard', function() {
-  return {
-    replace: true,
-    templateUrl: '../partials/product-card.html'
-  };
-})
 .directive('loadingStatus', function() {
   return {
     restrict: 'E',
@@ -13,18 +7,6 @@
       status: '='
     },
     templateUrl: '../partials/loading-status.html'
-  };
-})
-.directive('brandCard', function() {
-  return {
-    replace: true,
-    templateUrl: '../partials/brand-card.html'
-  };
-})
-.directive('categoryCard', function() {
-  return {
-    replace: true,
-    templateUrl: '../partials/category-card.html'
   };
 })
 .directive('breadcrumb', function() {
@@ -37,17 +19,5 @@
   return {
     replace: true,
     templateUrl: 'partials/language-selector.html'
-  };
-})
-.directive('categoriesNavigation', function() {
-  return {
-    replace: true,
-    templateUrl: 'partials/categories-navigation.html'
-  };
-})
-.directive('searchForm', function() {
-  return {
-    replace: true,
-    templateUrl: 'partials/search-form.html'
   };
 })
