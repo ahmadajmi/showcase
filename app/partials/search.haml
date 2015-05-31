@@ -13,7 +13,7 @@
         %h6.border-bottom.padding-bottom-one {{ 'products' | translate }}
 
     .row{ng-show:"done"}
-      .product-container.clearfix
+      .grid-container.clearfix
         .small-12.large-4.medium-6.column.product-card{ng-repeat: "product in products"}
           %product-card
 
@@ -23,7 +23,7 @@
         %h6.border-bottom.padding-bottom-one {{ 'brands' | translate }}
 
     .row{ng-show:"done"}
-      .product-container.clearfix
+      .grid-container.clearfix
         .small-12.large-4.medium-6.column.product-card{ng-repeat: "brand in brands"}
           %brand-card
 
@@ -33,11 +33,11 @@
         %h6.border-bottom.padding-bottom-one {{ 'categories' | translate }}
 
     .row{ng-show:"done"}
-      .product-container.clearfix
+      .grid-container.clearfix
         .small-12.large-4.medium-6.column.product-card{ng-repeat: "category in categories"}
           %category-card
 
-.div{ng-show:"done && search_results_length == 0"}
+%div{ng-show:"done && search_results_length == 0"}
   .row
     .column.large-12
       %h6 {{ 'search_page_results_nothing_found' | translate }} {{ query }}

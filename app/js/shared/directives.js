@@ -39,10 +39,10 @@
     templateUrl: 'partials/language-selector.html'
   };
 })
-.directive('navigation', function() {
+.directive('categoriesNavigation', function() {
   return {
     replace: true,
-    templateUrl: 'partials/navigation.html'
+    templateUrl: 'partials/categories-navigation.html'
   };
 })
 .directive('searchForm', function() {

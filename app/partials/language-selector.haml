@@ -1,6 +1,6 @@
 .padding-top-one.lang-select{ng-controller: "LanguageController"}
-  .div{ng-show: "lang == 'en'"}
+  %div{ng-show: "lang == 'en'"}
     %button{ng-click: "changeLanguage('ar')", translate: "button_lang_ar", class: "button button-small"}
 
-  .div{ng-show: "lang == 'ar'"}
+  %div{ng-show: "lang == 'ar'"}
     %button{ng-click: "changeLanguage('en')", translate: "button_lang_en", class: "button button-small"}

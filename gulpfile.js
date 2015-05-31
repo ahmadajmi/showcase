@@ -1,4 +1,4 @@
-// Include Gulp & tools
+// Include Gulp & Tools
 
 var gulp         = require('gulp');
 var del          = require('del');
@@ -99,14 +99,6 @@ gulp.task('copy:bower_components', function() {
 });
 
 
-// Copy Data
-
-gulp.task('copy:data', function() {
-  return gulp.src('./app/data/**/*')
-    .pipe(gulp.dest('./public/data'));
-});
-
-
 // Copy Templates
 
 gulp.task('copy:partials', function() {
@@ -128,7 +120,6 @@ gulp.task('serve', function() {
   gulp.watch(['./app/index.haml'], ['haml', reload]);
   gulp.watch('./app/styles/**/*.scss', ['sass', reload]);
   gulp.watch('./app/js/**/*.js', ['js', reload]);
-  gulp.watch('./app/data/**/*.json', ['copy:data', reload]);
   gulp.watch('./app/partials/**/*.haml', ['copy:partials', reload]);
 });
 
@@ -143,7 +134,7 @@ gulp.task('clean', function() {
 // Build
 
 gulp.task('build', ['clean'], function() {
-  runSequence('haml', 'sass', 'images', 'js', 'copy:bower_components', 'copy:data', 'copy:partials');
+  runSequence('haml', 'sass', 'images', 'js', 'copy:bower_components', 'copy:partials');
 });
 
 
