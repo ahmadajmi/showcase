@@ -23,8 +23,15 @@
       });
     }
 
-    search();
+    // Execute search() only on search page
+    // We need this because we use the same controller `SearchController` for the search form
+    // So when SearchController is used in the form, this controller will be loaded
+    // So this will prevent search() to be loaded in every page
+    if ($location.$$path.indexOf('/search/') == 0) {
+      search();
+    }
 
+    // Search form search action
     $scope.doSearch = function(query) {
       $location.path('/search/'+ query);
       search();
