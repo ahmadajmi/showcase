@@ -27,14 +27,13 @@
     display: block;
   }
 
-  li { margin-bottom: 5px; }
-
   .item {
     color: #7f8c8d;
     display: block;
     font-size: 14px;
     font-weight: 600;
     white-space: nowrap;
+    margin-bottom: 5px;
 
     &:hover { color: #34495e; }
   }

@@ -2,10 +2,21 @@
 
   %a{class: "nav-toggle", ng-click: "toggleMenu($event)"}
 
-  .navigation-body{ng-controller: "CategoriesController", ng-show: "menuOpened", class: "text-{{default_float}}" }
-    .row
-      .column.large-6.medium-6
-        %ul.list-bare
-          %li{ng-repeat: "(categoryKey, categoryValue) in categories"}
-            %a{href: "#/category/{{categoryKey | removeTrailingSlash}}", class: "item"}
-              {{ categoryKey }}
+  .navigation-body{ng-controller: "CategoriesController", ng-show: "menuOpened", class: "text-{{default_float}}"}
+
+    -# Category Page Navigation
+    %ul.list-bare{ng-show: "isCategoryPage"}
+      %li{ng-repeat: "category in categories"}
+        %a{href: "#/category/{{category | removeTrailingSlash}}", class: "item"}
+          {{ category }}
+
+          %ul.list-bare{ng-show: "currentCategory == category", class: "padding-{{default_float}}-one"}
+            %li{ng-repeat: "category in children"}
+              %a{href: "#/category/{{category | removeTrailingSlash}}", class: "item"}
+                {{ category }}
+
+    -# Global Navigation
+    %ul.list-bare{ng-show: "!isCategoryPage"}
+      %li{ng-repeat: "(categoryKey, categoryValue) in globalCategories"}
+        %a{href: "#/category/{{categoryKey | removeTrailingSlash}}", class: "item"}
+          {{ categoryKey }}

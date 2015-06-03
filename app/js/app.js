@@ -10,6 +10,8 @@ angular.module('GS1', [
   $rootScope.appName = 'GS1 SHOWCASE';
   $rootScope.default_float = 'left';
   $rootScope.opposite_float = 'right';
+  $rootScope.isCategoryPage = false;
+
   $rootScope.endpoint = 'http://gs1-api.cloudapp.net:8080/v1';
   $rootScope.token = 'f76b2ca2bd9b50f51e894ffd18708bc9';
 

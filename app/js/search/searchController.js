@@ -31,7 +31,7 @@
       search();
     }
 
-    // Search form search action
+    // Search form submit action
     $scope.doSearch = function(query) {
       $location.path('/search/'+ query);
       search();

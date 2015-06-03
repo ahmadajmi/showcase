@@ -1,4 +1,6 @@
-The App is entirely build with AngularJS as a Single Page App and fetching the data through a REST API. You will notice that we are using a basic Node.js with Express configuration, this is just for deploying the App easily with the server as I needed this to deploy it to Heroku.
+The App is entirely build with AngularJS as a Single Page App and fetching the data through a REST API. You will notice that we are using a basic Node.js with Express configuration, this is just for deploying the App easily to the server such as Heroku.
+
+[Demo App on Heroku]
 
 #### Installation
 
@@ -141,8 +143,22 @@ This will be generated as
 
 `removeTrailingSlash` filter is used with category name, because some times we get a category name like `Food/Beverage/Tobacco` and you can see the `/` in the name, this will make a conflict with Angular routes. So `removeTrailingSlash` is used to remove the `/` and add it in the controller to send it as a parameter.
 
+#### Technology Used
+
+* [HAML]
+* [SASS]
+* [Gulp]
+* [Bower]
+* [Angular.js]
+
+[Demo App on Heroku]: http://gs1-showcase.herokuapp.com/#/
 [Node.js]: https://nodejs.org/
 [bower]: http://bower.io/
 [localhost:3000]: http://localhost:3000
 [GS1 API]: http://docs.gs1egyptproducts.apiary.io/
 [angular-translate]: https://angular-translate.github.io/
+[HAML]: http://haml.info/
+[SASS]: http://sass-lang.com/
+[Gulp]: http://gulpjs.com/
+[Bower]: http://bower.io/
+[Angular.js]: https://angularjs.org/

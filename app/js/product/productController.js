@@ -9,7 +9,6 @@
       .then(function(response) {
         $scope.products = response.products;
         $scope.loading = false;
-        $rootScope.$broadcast('productsLoaded');
       }, function() {
         $scope.loading = false;
         $scope.status = 'productsـloading_error_status';
