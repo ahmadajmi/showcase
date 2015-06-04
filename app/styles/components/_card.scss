@@ -22,13 +22,13 @@
     content: " ";
   }
 
-  // Override the Grid top border caused by .product-card class
+  // Override the Grid top border caused by .card class
   &:before {
     width: 100%;
     border-top: 2px solid #fff;
   }
 
-  // Override the Grid left border caused by .product-card class
+  // Override the Grid left border caused by .card class
   &:after {
     left: 0;
     display: block;
@@ -36,22 +36,34 @@
   }
 }
 
-.product-card {
-  border: 2px solid $border-color;
+@media only screen and (max-width: 40em) {
+  .card-empty { display: none; }
+}
+
+@media only screen and (min-width: 40em) {
+  .card-row {
+    display: flex;
+    overflow: hidden;
+  }
+}
+
+.card {
+  border: 2px solid #bdc3c7;
   border-bottom: 0;
   border-right: 0;
   padding-bottom: 1rem;
+  flex: 1;
+
+  &:hover .card-title a {
+    color: #06A5D5;
+  }
 }
 
-.product-card-img { padding: 3rem 0; }
+.card-img { padding: 3rem 0; }
 
-.product-card-brand { }
-
-.product-card-title {
+.card-title {
   margin: 5px 0;
   font-size: 20px;
 
   a { color: #304561; }
 }
-
-.product-card-number { }

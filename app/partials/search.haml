@@ -10,38 +10,31 @@
 %div{ng-show:"done && search_results_length > 0"}
 
   -# Show products search results if we found some of them
-  .border-bottom{ng-show:"done && products.length > 0"}
-    .row
-      .column.large-12
-        %h6.border-bottom.padding-bottom-one {{ 'products' | translate }}
+  .row{ng-show:"done && products.length > 0"}
+    .column.large-12
+      %h5.border-bottom.padding-bottom-one {{ 'products' | translate }}
 
     .row
       .grid-container.clearfix
-        .small-12.large-4.medium-6.column.product-card{ng-repeat: "product in products"}
-          %product-card
+        %product-card-row{items: "products"}
 
   -# Show brands search results if we found some of them
-  .border-bottom{ng-show:"done && brands.length > 0"}
-    .row
-      .column.large-12
-        %h6.border-bottom.padding-bottom-one {{ 'brands' | translate }}
+  .row{ng-show:"done && brands.length > 0"}
+    .column.large-12
+      %h5.border-bottom.padding-bottom-one {{ 'brands' | translate }}
 
     .row
       .grid-container.clearfix
-        .small-12.large-4.medium-6.column.product-card{ng-repeat: "brand in brands"}
-          %brand-card
+        %brand-card-row{items: "brands"}
 
   -# Show categories search results if we found some of them
-  .border-bottom{ng-show:"done && categories.length > 0"}
-    .row
-      .column.large-12
-        %h6.border-bottom.padding-bottom-one {{ 'categories' | translate }}
+  .row{ng-show:"done && categories.length > 0"}
+    .column.large-12
+      %h5.border-bottom.padding-bottom-one {{ 'categories' | translate }}
 
     .row
       .grid-container.clearfix
-        .small-12.large-4.medium-6.column.product-card{ng-repeat: "category in categories"}
-          %category-card
-
+        %category-card-row{items: "categories"}
 
 -# Show callback message if there no search results is found
 %div{ng-show:"done && search_results_length == 0"}

@@ -112,6 +112,14 @@ gulp.task('copy:partials', function() {
 });
 
 
+// Copy Fonts
+
+gulp.task('copy:fonts', function() {
+  return gulp.src('./app/font/**/*')
+    .pipe(gulp.dest('./public/font'));
+});
+
+
 // Watch Files & Reload
 
 gulp.task('serve', function() {
@@ -138,7 +146,7 @@ gulp.task('clean', function() {
 // Build
 
 gulp.task('build', ['clean'], function() {
-  runSequence('haml', 'sass', 'images', 'js', 'copy:bower_components', 'copy:partials');
+  runSequence('haml', 'sass', 'images', 'js', 'copy:bower_components', 'copy:partials', 'copy:fonts');
 });
 
 

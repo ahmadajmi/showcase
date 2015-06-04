@@ -1,6 +1,18 @@
 .input-field {
-  padding: .5em;
+  padding: .5rem 1rem;
   font-size: 0.875rem;
   outline: none;
   border: 1px solid $border-color;
+}
+
+.search-form {
+  .input-field {
+    border: none;
+    background-color: #EFEFEF;
+  }
+
+  .icon-search {
+    position: relative;
+    top: -2px;
+  }
 }

@@ -1,0 +1,56 @@
+//
+// Product page
+//
+
+// Product slide thumbnails
+.photo-thumb {
+  cursor: pointer;
+  border: 2px solid #fff;
+  &.active {
+    border: 2px solid #D5D5D5;
+  }
+}
+
+// Product specs
+.spec-item {
+  padding-bottom: 1rem;
+  margin-bottom: 1rem;
+  border-bottom: 1px solid $border-color;
+
+  &.photos,
+  &.gtin,
+  &.description,
+  &.classification {
+    display: none;
+  }
+}
+
+
+//
+// Brand Page
+//
+
+.brand-logo {
+  width: 125px;
+  height: 125px;
+  padding: 3px;
+  border-radius: 50%;
+  border: 1px solid #346DA2;
+}
+
+.brand-name { color: #304460; }
+
+.brand-info {
+  font-size: 1.125rem;
+  color: #9B9B9B;
+}
+
+.brand-contact-info {
+  padding: 0;
+  margin: 0 0 4em 0;
+
+  li {
+    color: #304661;
+    display: inline-block;
+  }
+}

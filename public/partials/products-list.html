@@ -1,1 +1,1 @@
-<div ng-controller="ProductsController"><loading-status loading="loading" status="status"></loading-status><div ng-show="!loading" class="row"><div class="grid-container clearfix"><div ng-repeat="product in products" class="small-12 large-4 medium-6 column product-card"><product-card></product-card></div></div></div></div>
+<div ng-controller="ProductsController"><loading-status loading="loading" status="status"></loading-status><div ng-show="!loading" class="row"><div class="grid-container clearfix"><product-card-row items="products"></product-card-row></div></div></div>

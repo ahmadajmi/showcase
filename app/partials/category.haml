@@ -6,7 +6,14 @@
     .column.large-12
       %h4.border-bottom.padding-bottom-one {{ category }}
 
-  .row{ng-show:"done"}
-    .grid-container.clearfix
-      .small-12.large-4.medium-6.column.product-card{ng-repeat: "product in products"}
-        %product-card
+  -# Show products results if something is found
+  %div{ng-show:"done && products.length > 0"}
+    .row
+      .grid-container.clearfix
+        %product-card-row{items: "products"}
+
+  -# Show callback message if there no products
+  %div{ng-show:"done && products.length == 0"}
+    .row
+      .column.large-12
+        %h5 {{ 'category_page_results_nothing_found' | translate }} {{ query }}

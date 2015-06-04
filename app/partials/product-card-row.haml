@@ -1,0 +1,13 @@
+-# Why $index % 3 == 0
+-# This will output 3 columns in every row
+-# if for example we have only 4 products, first row will have 3,
+-# the second row will have 1, but we want to add more empty 2 columns so the layout border could be done
+
+%div
+  .card-row{ng-repeat: "item in items", ng-show: "$index % 3 == 0"}
+    .small-12.large-4.medium-6.column.card{ng-class: "{'card-empty': !items[$index]}"}
+      %product-card{item: "items[$index]"}
+    .small-12.large-4.medium-6.column.card{ng-class: "{'card-empty': !items[$index + 1]}"}
+      %product-card{item: "items[$index + 1]"}
+    .small-12.large-4.medium-6.column.card{ng-class: "{'card-empty': !items[$index + 2]}"}
+      %product-card{item: "items[$index + 2]"}

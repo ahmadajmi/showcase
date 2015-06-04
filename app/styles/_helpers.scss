@@ -79,11 +79,17 @@
 // Box Model
 
 .hide { display: none; }
-.padding-one { padding: 1rem; }
+
 .margin-bottom-one { margin-bottom: 1rem; }
 .margin-bottom-two { margin-bottom: 2rem; }
+.margin-right-one { margin-right: 1rem; }
+.margin-right-two { margin-right: 2rem; }
+.margin-left-one { margin-left: 1rem; }
+.margin-left-two { margin-left: 2rem; }
 
-
+.padding-one { padding: 1rem; }
+.padding-left-half { padding-left: .5rem; }
+.padding-right-half { padding-right: .5rem; }
 .padding-left-one { padding-left: 1rem; }
 .padding-right-one { padding-right: 1rem; }
 .padding-bottom-one { padding-bottom: 1rem; }

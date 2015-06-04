@@ -143,6 +143,19 @@ This will be generated as
 
 `removeTrailingSlash` filter is used with category name, because some times we get a category name like `Food/Beverage/Tobacco` and you can see the `/` in the name, this will make a conflict with Angular routes. So `removeTrailingSlash` is used to remove the `/` and add it in the controller to send it as a parameter.
 
+
+#### Icons
+
+Icons generated from [fontello] and could be used as:
+
+``` haml
+%i{class: "demo-icon icon-search"}
+%i{class: "demo-icon icon-globe"}
+%i{class: "demo-icon icon-location"}
+%i{class: "demo-icon icon-mobile"}
+%i{class: "demo-icon icon-mail"}
+```
+
 #### Technology Used
 
 * [HAML]
@@ -162,3 +175,4 @@ This will be generated as
 [Gulp]: http://gulpjs.com/
 [Bower]: http://bower.io/
 [Angular.js]: https://angularjs.org/
+[fontello]: http://fontello.com/
