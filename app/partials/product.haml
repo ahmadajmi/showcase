@@ -63,7 +63,6 @@
           %h4.uppercase.margin-bottom-one.padding-bottom-one
             {{ 'related_products' | translate }}
 
-    -# `product.gtin != productGTIN` is to exclude the current product to be shown as a related product
     .row
       .grid-container.clearfix
         %product-card-row{items: "related_products"}

@@ -1,7 +1,7 @@
 %div{ng-show: "item"}
   %a{ng-href: "#/product/{{item.gtin}}", class: "block"}
     .flex-embed.flex-embed--4by3
-      %img.card-img.flex-embed__object{ng-src: "{{ item.photos.value[0] }}"}
+
 
   %a{ng-href: "#/brands/{{item.brand.value}}", class: "block text-center grey"}
     {{ item.brand.value }}

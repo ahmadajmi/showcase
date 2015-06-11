@@ -16,8 +16,8 @@
     content: "";
     width: 2rem;
     box-shadow: 0 4px  0 1px #304661,
-                0 14px 0 1px #304661,
-                0 24px 0 1px #304661;
+    0 14px 0 1px #304661,
+    0 24px 0 1px #304661;
   }
 }
 
@@ -28,24 +28,49 @@
   }
 
   .item {
-    color: #7f8c8d;
+    color: #fff;
     display: block;
-    font-size: 14px;
+    font-size: 13px;
     font-weight: 600;
     white-space: nowrap;
     margin-bottom: 5px;
+    position: relative;
+    padding-left: 1.1rem;
 
-    &:hover { color: #34495e; }
+    &:before {
+      position: absolute;
+      top: 5px;
+      left: 0;
+      content: "";
+      width: 0;
+      height: 0;
+      border-top: 4px solid transparent;
+      border-bottom: 4px solid transparent;
+      border-left: 10px solid #848F9D;
+    }
+
+    &:hover { color: #51CC8F; }
   }
+}
+
+.navigation-head {
+  display: block;
+  border-bottom: 1px solid #979797;
+  padding: 20px 30px;
+  font-size: 14px;
+  color: #FFF;
 }
 
 .navigation-body {
   top: 100%;
   z-index: 10;
-  padding: 24px 24px 10px;
+  min-width: 370px;
   position: absolute;
-  background-color: #fff;
-  border-radius: 6px;
-  background-color: #fff;
-  box-shadow: 0px 1px 5px 0px rgba(0, 0, 0, 0.25);
+  background-color: #304661;
+}
+
+.navigation-list {
+  padding: 20px 30px;
+
+  a:empty { display: none; }
 }

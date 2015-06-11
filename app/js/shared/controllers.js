@@ -17,18 +17,18 @@
   }])
 .controller('MenuController', ['$scope', function($scope) {
 
-  $scope.menuOpened = false;
+  $scope.menuOpened = true;
 
-  $scope.toggleMenu = function(event) {
-    $scope.menuOpened = !($scope.menuOpened);
-    event.stopPropagation();
-  };
+  // $scope.toggleMenu = function(event) {
+  //   $scope.menuOpened = !($scope.menuOpened);
+  //   event.stopPropagation();
+  // };
 
-  window.onclick = function() {
-    if ($scope.menuOpened) {
-      $scope.menuOpened = false;
-      $scope.$apply();
-    }
-  }
+  // window.onclick = function() {
+  //   if ($scope.menuOpened) {
+  //     $scope.menuOpened = false;
+  //     $scope.$apply();
+  //   }
+  // }
 
 }])

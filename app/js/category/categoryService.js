@@ -22,7 +22,7 @@
   };
 
   resource.getCategoryChildren = function() {
-    return $resource($rootScope.endpoint + '/categories/' + ':category', { category: '@category' }, {
+    return $resource($rootScope.endpoint + '/categories/' + ':category' + '?context=true', { category: '@category' }, {
       get: {
         method: 'GET',
         headers: $rootScope.headers

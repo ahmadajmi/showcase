@@ -21,7 +21,7 @@ angular.module('GS1', [
     'Accept-Language': $rootScope.lang,
     'Accept': 'application/json',
     'Authorization': 'Token token="' + $rootScope.token + '"'
-  }
+  };
 
   // Listen to languageChange broadcast and change the header
   $rootScope.$on('languageChange', function(event, data) {

@@ -28,16 +28,31 @@
       return categoryService.getCategoryChildren().get({category: category})
       .$promise
       .then(function(response) {
-        response.siblings.push(response.self);
-        $scope.categories = response.siblings;
-        $scope.currentCategory = response.self;
-        $scope.children = response.children;
+        console.log(response)
+
+        $scope.categories = response.context;
+
+        $scope.navPath = response.nav_path;
+
+        $scope.tree;
+        $scope.treeParent;
+
+        for (key in $scope.categories) {
+          if ($scope.categories[key] instanceof Array) {
+            $scope.treeParent = key;
+            $scope.tree = $scope.categories[key];
+          }
+        }
+
+        $scope.self = response.self;
+
+        $scope.children = response.context[response.self];
       });
     }
 
     function categories() {
       return $scope.$on('$routeChangeSuccess', function() {
-        if ($location.$$path.indexOf('/category/') == 0) {
+        if ($location.$$path.indexOf('/category/') === 0) {
           $rootScope.isCategoryPage = true;
           $scope.query = $routeParams.category.replace(/\-/g, '/');
           getCategoryChildren($scope.query);
