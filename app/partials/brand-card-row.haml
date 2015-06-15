@@ -1,8 +1,8 @@
 %div
   .card-row{ng-repeat: "item in items", ng-show: "$index % 3 == 0"}
-    .small-12.large-4.medium-6.column.card{ng-class: "{'card-empty': !items[$index]}"}
+    .small-12.large-4.medium-4.column.card{ng-class: "{'card-empty': !items[$index]}"}
       %brand-card{item: "items[$index]"}
-    .small-12.large-4.medium-6.column.card{ng-class: "{'card-empty': !items[$index + 1]}"}
+    .small-12.large-4.medium-4.column.card{ng-class: "{'card-empty': !items[$index + 1]}"}
       %brand-card{item: "items[$index + 1]"}
-    .small-12.large-4.medium-6.column.card{ng-class: "{'card-empty': !items[$index + 2]}"}
+    .small-12.large-4.medium-4.column.card{ng-class: "{'card-empty': !items[$index + 2]}"}
       %brand-card{item: "items[$index + 2]"}

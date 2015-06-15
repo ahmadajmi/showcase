@@ -36,19 +36,18 @@
   }
 }
 
+// Make cards the same height so we can show the border for empty items
+@media only screen and (min-width: 40em) {
+  .card-row { display: flex; }
+}
+
+// Hide empty items in medium screens, this will hide the borders
 @media only screen and (max-width: 40em) {
   .card-empty { display: none; }
 }
 
-@media only screen and (min-width: 40em) {
-  .card-row {
-    display: flex;
-    overflow: hidden;
-  }
-}
-
 .card {
-  border: 2px solid #bdc3c7;
+  border: 2px solid #eee;
   border-bottom: 0;
   border-right: 0;
   padding-bottom: 1rem;

@@ -35,8 +35,9 @@
       .then(function(response) {
         $scope.product = response.product;
         $scope.productGTIN = response.product.gtin;
-        $scope.mainPhoto = response.product.photos.value[0];
-        $scope.product.photos = response.product.photos.value;
+        $scope.mainPhoto = response.product.photos.value_large[0];
+        $scope.small_photos = response.product.photos.value_small;
+        $scope.large_photos = response.product.photos.value_large;
         $scope.loading = false;
         $scope.done = true;
       }, function() {
@@ -65,8 +66,8 @@
       getRelatedProducts();
     });
 
-    $scope.setMainPhoto = function(photo) {
-      $scope.mainPhoto = photo;
+    $scope.setMainPhoto = function(index) {
+      $scope.mainPhoto = $scope.large_photos[index];
     }
 
   }])

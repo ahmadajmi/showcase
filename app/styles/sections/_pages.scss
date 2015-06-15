@@ -4,6 +4,7 @@
 
 // Product slide thumbnails
 .photo-thumb {
+  width: 75px;
   cursor: pointer;
   border: 2px solid #fff;
   &.active {

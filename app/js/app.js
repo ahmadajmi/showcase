@@ -11,6 +11,7 @@ angular.module('GS1', [
   $rootScope.default_float = 'left';
   $rootScope.opposite_float = 'right';
   $rootScope.isCategoryPage = false;
+  $rootScope.offCanvasOpened = false;
 
   $rootScope.endpoint = 'http://gs1-api.cloudapp.net:8080/v1';
   $rootScope.token = 'f76b2ca2bd9b50f51e894ffd18708bc9';
@@ -66,7 +67,7 @@ angular.module('GS1', [
       'search_button': 'Search',
       'search_page_title': 'Search results for: ',
       'search_page_results_nothing_found': 'Sorry there is no search results for',
-      'category_page_results_nothing_found': 'Sorry there is no products',
+      'category_page_results_nothing_found': 'Sorry there are no products',
       'page_not_found_title': 'Sorry that page was not found',
       'products': 'Products',
       'brands': 'Brands',

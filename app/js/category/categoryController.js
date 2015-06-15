@@ -24,29 +24,40 @@
     //   - Confectionery
     //   - Milk/Butter
 
+    // Convert the coming JSON into more usable format so we can use it recursively with Angular.js
+    // See: http://goo.gl/JDAV2z
+
+    function convert(obj, currentNav) {
+      if(!obj) return null;
+      if(obj[0]) {
+        var res = []
+        obj.forEach(function(cur) {res.push({
+          title: cur,
+          isCurrent: cur == currentNav[0],
+          isActive: cur == currentNav[0] && currentNav.length === 1})});
+        return res;
+      }
+      else {
+        var res = []
+        Object.keys(obj).forEach(function(key) {
+          var val = obj[key];
+          res.push({
+            title: key,
+            isCurrent: key == currentNav[0],
+            isActive: key == currentNav[0] && currentNav.length === 1,
+            categories: convert(val, currentNav.slice(1))});
+        })
+        return res;
+      }
+    }
+
     function getCategoryChildren(category) {
       return categoryService.getCategoryChildren().get({category: category})
       .$promise
       .then(function(response) {
-        console.log(response)
-
-        $scope.categories = response.context;
-
         $scope.navPath = response.nav_path;
-
-        $scope.tree;
-        $scope.treeParent;
-
-        for (key in $scope.categories) {
-          if ($scope.categories[key] instanceof Array) {
-            $scope.treeParent = key;
-            $scope.tree = $scope.categories[key];
-          }
-        }
-
-        $scope.self = response.self;
-
-        $scope.children = response.context[response.self];
+        $scope.end_path = response.nav_path[response.nav_path.length - 1];
+        $scope.categories = convert(response.context, $scope.navPath);
       });
     }
 
@@ -54,8 +65,7 @@
       return $scope.$on('$routeChangeSuccess', function() {
         if ($location.$$path.indexOf('/category/') === 0) {
           $rootScope.isCategoryPage = true;
-          $scope.query = $routeParams.category.replace(/\-/g, '/');
-          getCategoryChildren($scope.query);
+          getCategoryChildren($routeParams.category.replace(/\-/g, '/'));
         } else {
           getTopLevelCategories();
         }

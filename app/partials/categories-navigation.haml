@@ -1,29 +1,30 @@
-.navigation{ng-controller: "MenuController"}
+.categories-body.off-canvas-nav{ng-controller: "CategoriesController", class: "text-{{default_float}}", ng-class: "{'active': offCanvasOpened}"}
 
-  %a{class: "nav-toggle", ng-click: "toggleMenu($event)"}
+  %a.categories-head{href: "/#/"}
+    %i{class: "demo-icon icon-home padding-{{opposite_float}}-half"}
+    {{ appName }} HOME
 
-  .navigation-body{ng-controller: "CategoriesController", ng-show: "menuOpened", class: "text-{{default_float}}"}
+  -#
+  -# Category Page Navigation
+  -#
 
-    %a.navigation-head{href: "/#/"}
-      %i{class: "demo-icon icon-home padding-{{opposite_float}}-half"}
-      {{ appName }} HOME
+  -# Inspired by http://goo.gl/JDAV2z
+  %script{type: "text/ng-template", id: "categoryTree"}
+    %a{href: "#/category/{{category.title | removeTrailingSlash}}", class: "item", ng-class: "{'item-open': category.isCurrent && category.categories, 'item-active': category.isActive && end_path === category.title && category.categories.length === 0}"}
+      {{ category.title }}
 
-    -# Category Page Navigation
-    %ul.list-bare.navigation-list{ng-show: "isCategoryPage"}
+    %ul.list-bare{class: "padding-{{default_float}}-one", ng-if: "category.categories"}
+      %li{ng-repeat: "category in category.categories", ng-include: "'categoryTree'"}
 
-      %li{ng-repeat: "(categoryKey, categoryValue) in categories"}
-        %a{href: "#/category/{{categoryKey | removeTrailingSlash}}", class: "item"}
-          {{ categoryKey }}
 
-          %div{ng-show: "treeParent == categoryKey", ng-repeat: "path in navPath"}
+  %ul.list-bare.categories-list{ng-show: "isCategoryPage"}
+    %li{ng-repeat: "category in categories", ng-include: "'categoryTree'"}
 
-            %ul.list-bare{class: "padding-{{default_float}}-one"}
-              %li{ng-repeat: "category in tree"}
-                %a{href: "#/category/{{category | removeTrailingSlash}}", class: "item"}
-                  {{ category }}
+  -#
+  -# Global Navigation
+  -#
 
-    -# Global Navigation
-    %ul.list-bare.navigation-list{ng-show: "!isCategoryPage"}
-      %li{ng-repeat: "(categoryKey, categoryValue) in globalCategories"}
-        %a{href: "#/category/{{categoryKey | removeTrailingSlash}}", class: "item"}
-          {{ categoryKey }}
+  %ul.list-bare.categories-list{ng-show: "!isCategoryPage"}
+    %li{ng-repeat: "(categoryKey, categoryValue) in globalCategories"}
+      %a{href: "#/category/{{categoryKey | removeTrailingSlash}}", class: "item"}
+        {{ categoryKey }}

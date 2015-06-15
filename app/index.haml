@@ -13,29 +13,34 @@
 
   %body
 
-    -# Header
-    %header{class: "site-header", role: "banner"}
-      .row.relative
-        %div{class: "text-{{default_float}} {{default_float}} padding-{{default_float}}-one"}
-          %categories-navigation
+    %categories-navigation
 
-        %a.logo{href: "/#/"}
-          {{ appName }}
+    .off-canvas-container.site-container{ng-class: "{'active': offCanvasOpened}"}
 
-        %div{class: "text-{{opposite_float}} {{opposite_float}} padding-{{opposite_float}}-one"}
-          %language-selector
+      -# Header
+      %header{class: "site-header", role: "banner"}
+        .row.relative
+          %div{class: "text-{{default_float}} {{default_float}} padding-{{default_float}}-one"}
+            .navigation{ng-controller: "MenuController"}
+              %a{class: "nav-toggle", ng-click: "toggleMenu($event)"}
 
-        %div{class: "text-{{opposite_float}} {{opposite_float}} padding-{{opposite_float}}-one show-for-large"}
-          %search-form
+          %a.logo{href: "/#/"}
+            {{ appName }}
 
-    -# Main Section
-    %main{class: "site-content margin-bottom-one", role: "main", ng-view:}
+          %div{class: "text-{{opposite_float}} {{opposite_float}} padding-{{opposite_float}}-one"}
+            %language-selector
 
-    -# Footer
-    .footer.border-top{role: "contentinfo"}
-      .row
-        .large-8.column
-          %p.grey
-            Copyright &copy; 2015 GS1 Egypt LLC
+          %div{class: "text-{{opposite_float}} {{opposite_float}} padding-{{opposite_float}}-one show-for-large"}
+            %search-form
+
+      -# Main Section
+      %main{class: "site-content margin-bottom-one", role: "main", ng-view:}
+
+      -# Footer
+      .footer.border-top{role: "contentinfo"}
+        .row
+          .large-8.column
+            %p.grey
+              Copyright &copy; 2015 GS1 Egypt LLC
 
     %script{src: "js/app.js"}

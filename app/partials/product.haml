@@ -13,10 +13,9 @@
           %img.flex-embed__object{ng-src: "{{ mainPhoto }}", alt: "{{ product.productName.value }}"}
 
       .small-12.medium-3.large-2.column
-        %ul.list-bare.row
-          %li.margin-bottom-one.column.small-4.medium-12.large-12{ng-repeat: "photo in product.photos"}
-            .flex-embed.flex-embed--16by9
-              %img.photo-thumb.flex-embed__object{ng-src: "{{ photo }}", alt: "{{ product.productname.value }}", ng-click: "setMainPhoto(photo)", ng-class: "{'active': mainPhoto == photo}"}
+        %ul.list-bare.row{class: "text-{{opposite_float}}"}
+          %li.margin-bottom-one.column.small-4.medium-12.large-12{ng-repeat: "photo in small_photos"}
+              %img.photo-thumb{ng-src: "{{ photo }}", alt: "{{ product.productname.value }}", ng-click: "setMainPhoto($index)"}
 
   .border-bottom.section{ng-show:"done"}
     .row

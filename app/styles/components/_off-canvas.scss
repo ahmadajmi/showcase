@@ -1,0 +1,48 @@
+// prevent horizontal scroll during off-canvas
+html,
+body {
+  overflow-x: hidden;
+}
+
+.off-canvas-nav {
+  width: 400px;
+  position: fixed;
+  left: 0px;
+  top: 0px;
+  height: 100%;
+  opacity: 0;
+  background-color: #304661;
+  transform: translate3d(0px, 0px, 0px) translateX(-400px);
+  transition: all 0.3s cubic-bezier(0.16, 0.63, 0.45, 0.98) 0s;
+
+  &.active {
+    opacity: 1;
+    transform: translate3d(0px, 0px, 0px) translateX(0);
+  }
+}
+
+.off-canvas-container {
+  transform: translate3d(0, 0, 0) translateX(0);
+  transition: all 0.3s cubic-bezier(0.16, 0.63, 0.45, 0.98) 0s;
+
+  &.active {
+    transform: translate3d(0px, 0px, 0px) translateX(400px);
+  }
+}
+
+
+[lang="ar"] .off-canvas-nav {
+  right: 0;
+  left: auto;
+  transform: translate3d(0px, 0px, 0px) translateX(400px);
+
+ &.active {
+    transform: translate3d(0px, 0px, 0px) translateX(0);
+  }
+}
+
+[lang="ar"] .off-canvas-container {
+  &.active {
+    transform: translate3d(0px, 0px, 0px) translateX(-400px);
+  }
+}

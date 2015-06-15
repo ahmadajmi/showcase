@@ -15,20 +15,18 @@
     };
 
   }])
-.controller('MenuController', ['$scope', function($scope) {
+.controller('MenuController', ['$scope', '$rootScope', function($scope, $rootScope) {
 
-  $scope.menuOpened = true;
+  $scope.toggleMenu = function(event) {
+    $rootScope.offCanvasOpened = !($rootScope.offCanvasOpened);
+    event.stopPropagation();
+  };
 
-  // $scope.toggleMenu = function(event) {
-  //   $scope.menuOpened = !($scope.menuOpened);
-  //   event.stopPropagation();
-  // };
-
-  // window.onclick = function() {
-  //   if ($scope.menuOpened) {
-  //     $scope.menuOpened = false;
-  //     $scope.$apply();
-  //   }
-  // }
+  window.onclick = function() {
+    if ($rootScope.offCanvasOpened) {
+      $rootScope.offCanvasOpened = false;
+      $scope.$apply();
+    }
+  }
 
 }])
